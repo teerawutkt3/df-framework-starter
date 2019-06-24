@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+	<!-- Data Sources -->
+	<data-sources></data-sources>
+
+	<!-- Form Beans -->
+	<form-beans>
+		<form-bean name="Login" type="com.depthfirst.framework.ums.struts.LoginForm" />
+		<form-bean name="Home" type="com.depthfirst.framework.struts.BaseForm" />
+	</form-beans>
+
+
+	<!-- Global Exceptions -->
+	<global-exceptions></global-exceptions>
+
+
+	<!-- Global Forwards -->
+	<global-forwards>
+		<forward name="login" path="/test/right.jsp" />
+		<forward name="close" path="/close.jsp" />
+		<forward name="home" path="/home.jsp" redirect="true" />
+	</global-forwards>
+
+	<!-- Action Mappings -->
+	<action-mappings>
+		<action type="com.depthfirst.framework.ums.struts.LoginAction"
+				path="/login" name="Login" scope="request" validate="false" parameter="cmd">
+			<forward name="password" path="/password.jsp" />
+			<forward name="node" path="/node.jsp" />
+			<forward name="passwordExpired" path="/passwordExpired.jsp" />
+		</action>
+	</action-mappings>
+
+	<!-- Message Resources -->
+	<message-resources parameter="com.depthfirst.framework.struts.MessageResources"/>
+
+</struts-config>
