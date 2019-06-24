@@ -105,7 +105,7 @@ setTimeout(function() { document.getElementById('loginField').focus(); }, 10);
 				                </div><br>
 				                <div class="d-flex justify-content-center login_container">               
 				                      <a href="index.html" class="btn btn-danger btn-user btn-block">
-				                        <i class="fab fa-google fa-fw"></i> Login with Google
+				                       <i class="fa fa-google"></i> Login with Google
 				                      </a>                         
 				                </div><br>
 								
