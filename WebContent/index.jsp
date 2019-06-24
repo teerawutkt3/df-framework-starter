@@ -101,7 +101,7 @@ setTimeout(function() { document.getElementById('loginField').focus(); }, 10);
 				                    </div>
 				                </div>
 				                <div class="d-flex justify-content-center mt-3 login_container">               
-				                      <input type="submit" class="btn login_btn" value="Login" />                              
+				                      <button type="submit" class="btn login_btn"><i class="fa fa-sign-in"></i> Login</button>                            
 				                </div><br>
 				                <div class="d-flex justify-content-center login_container">               
 				                      <a href="index.html" class="btn btn-danger btn-user btn-block">
