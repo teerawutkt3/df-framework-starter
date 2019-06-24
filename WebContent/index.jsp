@@ -25,9 +25,21 @@ setTimeout(function() { document.getElementById('loginField').focus(); }, 10);
 <script language="JavaScript" src="<%= ctxPath %>/js/validateDate.js"></script>
 <script language="JavaScript" src="<%= ctxPath %>/js/validateNumber.js"></script>
 
-<script language="JavaScript" src="<%= request.getContextPath() %>/lib/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- theme css-->
-<link rel="stylesheet" href="<%= request.getContextPath() %>/theme/css/sb-admin-2.min.css">
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="<%= request.getContextPath() %>/assets/lib/bootstrap4/bootstrap.min.css">
+<link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/login.css">
+<link rel="stylesheet" href="<%= request.getContextPath() %>/assets/lib/fontawesome-4.7.0/css/font-awesome.min.css">
+
+<!-- jQuery library -->
+<script src="<%= request.getContextPath() %>/assets/lib/jquery/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="<%= request.getContextPath() %>/assets/lib/bootstrap4/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="<%= request.getContextPath() %>/assets/lib/bootstrap4/bootstrap.min.js"></script>
 
 <!--style for login page only-->
 <style>
@@ -45,45 +57,72 @@ setTimeout(function() { document.getElementById('loginField').focus(); }, 10);
 
       <div class="col-xl-10 col-lg-12 col-md-9">
 
-        <div class="card o-hidden border-0 shadow-lg my-5">
-          <div class="card-body p-0">
+        <div class=" o-hidden border-0 ">
+          <div>
             <!-- Nested Row within Card Body -->
             <div class="row">
-              <div class="col-lg-6 d-none d-lg-block bg-login-image"> 
-              </div>
-              <div class="col-lg-6">
+              
+              <div class="col-lg-12">
                 <div class="p-5">
                   <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                    <h1 class="h4 mb-4" style="color:#ffffff;">Welcome Back!</h1>
                   </div>
+                  <br>
+                  <br>
                   <form class="user">
-                    <div class="form-group">
-                      <input type="login" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Username..." />
-                    </div>
-                    <div class="form-group">
-                      <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password" />
-                    </div>
-                    <div class="form-group">
-                      <div class="custom-control custom-checkbox small">
-                        <input type="checkbox" class="custom-control-input" id="customCheck">
-                        <label class="custom-control-label" for="customCheck">Remember Me</label>
-                      </div>
-                    </div> 
-                      
-                      <input type="submit" class="btn btn-primary btn-user btn-block" value="Login" />
-                 
-                    <hr>
-                    <a href="index.html" class="btn btn-google btn-user btn-block">
-                      <i class="fab fa-google fa-fw"></i> Login with Google
-                    </a> 
+                   <div class="container h-100">
+				        <div class="d-flex justify-content-center h-100">
+				            <div class="user_card">
+				                <div class="d-flex justify-content-center">
+				                    <div class="brand_logo_container">
+				                        <img src="<%= request.getContextPath() %>/assets/images/df_logo.png" class="brand_logo" alt="Logo">
+				                    </div>
+				                </div>
+				                <div class="d-flex justify-content-center form_container">                	
+				                    <div >                    	
+				                        <div class="input-group mb-3">
+				                            <div class="input-group-append">
+				                                <span class="input-group-text"><i class="fa fa-user-circle-o"></i></span>
+				                            </div>
+				                            <input type="login" name="" class="form-control input_user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Username..." >
+				                        </div>
+				                        <div class="input-group mb-2">
+				                            <div class="input-group-append">
+				                                <span class="input-group-text"><i class="fa fa-unlock-alt  fa-lg"></i></span>
+				                            </div>
+				                            <input type="password" class="form-control input_pass" id="exampleInputPassword" placeholder="Password">
+				                        </div>
+				                        <div class="form-group">
+				                            <div class="custom-control custom-checkbox">
+				                                <input type="checkbox" class="custom-control-input" id="customCheck">
+				                                <label class="custom-control-label" for="customCheck">Remember me</label>
+				                            </div>
+				                        </div>
+				                    </div>
+				                </div>
+				                <div class="d-flex justify-content-center mt-3 login_container">               
+				                      <input type="submit" class="btn login_btn" value="Login" />                              
+				                </div><br>
+				                <div class="d-flex justify-content-center login_container">               
+				                      <a href="index.html" class="btn btn-danger btn-user btn-block">
+				                        <i class="fab fa-google fa-fw"></i> Login with Google
+				                      </a>                         
+				                </div><br>
+								
+				                <div class="mt-4">
+				                    <div class="d-flex justify-content-center links">
+				                        Don't have an account? <a href="#" class="ml-2">Sign Up</a>
+				                    </div>
+				                    <div class="d-flex justify-content-center links">
+				                         <a class="small" href="forgot-password.html">Forgot Password?</a>
+				                    </div>
+				                </div>
+				            </div>            
+				        </div>        
+				    </div>
+    
                   </form>
-                  <hr>
-                  <div class="text-center">
-                    <a class="small" href="forgot-password.html">Forgot Password?</a>
-                  </div>
-                  <div class="text-center">
-                    
-                  </div>
+                  
                 </div>
               </div>
             </div>
@@ -99,11 +138,9 @@ setTimeout(function() { document.getElementById('loginField').focus(); }, 10);
 	 			Depth First Co., Ltd. Copyright &copy; All rights reserved.
 			</div>
 		</div>
-      
 	</div>
-	
    </div>
- 	
+ 	 
 </nested:form> 
 
 <!-- Session Count[<%= com.depthfirst.framework.ums.web.UserSession.getSessionCount() %>] -->
@@ -113,7 +150,5 @@ setTimeout(function() { document.getElementById('loginField').focus(); }, 10);
 createErrorPane(getForm());
 // -->
 </script>
-<script language="JavaScript" type="text/javascript" src="<%= request.getContextPath() %>/lib/jquery/dist/jquery.js"></script>
-<script language="JavaScript" src="<%= request.getContextPath() %>/lib/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
