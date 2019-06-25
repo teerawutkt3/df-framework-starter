@@ -83,16 +83,14 @@ if(user!=null && request.getParameter("doSetPerType")!=null) {
 		<div class="row mt-3">
 			<div class="col-sm-2 text-right">Right</div>
 			<div class="col-sm-6">
-				<div class="row">
 					<% for(int i=0; i<UserSession.RIGHTS.length; i++) { %>
-						<div class="col-sm-3"> 
+						<div class="row">
 							<div class="custom-control custom-checkbox">
 								<input type="checkbox" class="custom-control-input" name="right"  id="<%= UserSession.RIGHTS[i] %>" />
 								<label class="custom-control-label" for="<%= UserSession.RIGHTS[i] %>"><%= UserSession.RIGHT_LABELS[i] %></label>
 							</div>
 						</div>
 					<% } %>
-				</div>
 			</div>
 		</div>
 		<br/>
