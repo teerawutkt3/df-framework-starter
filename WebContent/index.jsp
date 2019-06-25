@@ -28,9 +28,9 @@ setTimeout(function() { document.getElementById('loginField').focus(); }, 10);
 <!-- theme css-->
 
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="<%= request.getContextPath() %>/assets/lib/bootstrap4/bootstrap.min.css">
-<link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/login.css">
-<link rel="stylesheet" href="<%= request.getContextPath() %>/assets/lib/fontawesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="<%= request.getContextPath() %>/assets/lib/bootstrap4/bootstrap.min.css" />
+<link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/login.css"/>
+<link rel="stylesheet" href="<%= request.getContextPath() %>/assets/lib/fontawesome-4.7.0/css/font-awesome.min.css"/>
 
 <!-- jQuery library -->
 <script src="<%= request.getContextPath() %>/assets/lib/jquery/jquery.min.js"></script>
@@ -67,15 +67,15 @@ setTimeout(function() { document.getElementById('loginField').focus(); }, 10);
                   <div class="text-center">
                     <h1 class="h4 mb-4" style="color:#ffffff;">Welcome Back!</h1>
                   </div>
-                  <br>
-                  <br>
+                  <br/>
+                  <br/>
                   <form class="user">
                    <div class="container h-100">
 				        <div class="d-flex justify-content-center h-100">
 				            <div class="user_card">
 				                <div class="d-flex justify-content-center">
 				                    <div class="brand_logo_container">
-				                        <img src="<%= request.getContextPath() %>/assets/images/df_logo.png" class="brand_logo" alt="Logo">
+				                        <img src="<%= request.getContextPath() %>/assets/images/df_logo.png" class="brand_logo" alt="Logo" />
 				                    </div>
 				                </div>
 				                <div class="d-flex justify-content-center form_container">                	
@@ -84,17 +84,17 @@ setTimeout(function() { document.getElementById('loginField').focus(); }, 10);
 				                            <div class="input-group-append">
 				                                <span class="input-group-text"><i class="fa fa-user-circle-o"></i></span>
 				                            </div>
-				                            <input type="login" name="" class="form-control input_user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Username..." >
+				                            <input type="login"  class="form-control input_user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Username" />
 				                        </div>
 				                        <div class="input-group mb-2">
 				                            <div class="input-group-append">
 				                                <span class="input-group-text"><i class="fa fa-unlock-alt  fa-lg"></i></span>
 				                            </div>
-				                            <input type="password" class="form-control input_pass" id="exampleInputPassword" placeholder="Password">
+				                            <input type="password" class="form-control input_pass" id="exampleInputPassword" placeholder="Password"/>
 				                        </div>
 				                        <div class="form-group">
 				                            <div class="custom-control custom-checkbox">
-				                                <input type="checkbox" class="custom-control-input" id="customCheck">
+				                                <input type="checkbox" class="custom-control-input" id="customCheck"/>
 				                                <label class="custom-control-label" for="customCheck">Remember me</label>
 				                            </div>
 				                        </div>
@@ -104,7 +104,7 @@ setTimeout(function() { document.getElementById('loginField').focus(); }, 10);
 				                      <button type="submit" class="btn login_btn"><i class="fa fa-sign-in"></i> Login</button>                            
 				                </div><br>
 				                <div class="d-flex justify-content-center login_container">               
-				                      <a href="index.html" class="btn btn-danger btn-user btn-block">
+				                      <a href="index.html" class="btn btn-sm btn-danger btn-user btn-block">
 				                       <i class="fa fa-google"></i> Login with Google
 				                      </a>                         
 				                </div><br>
@@ -126,12 +126,8 @@ setTimeout(function() { document.getElementById('loginField').focus(); }, 10);
                 </div>
               </div>
             </div>
-            
-            
-          </div>
-        </div>
-        
-        
+           </div>
+        </div>        
       </div>
       	<div class="row">
 			<div class="text-white">

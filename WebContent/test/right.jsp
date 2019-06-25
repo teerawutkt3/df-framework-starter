@@ -42,6 +42,22 @@ if(user!=null && request.getParameter("doSetPerType")!=null) {
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=TIS-620">
 <title>Test Right</title>
+
+<!-- theme css-->
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="<%= request.getContextPath() %>/assets/lib/bootstrap4/bootstrap.min.css" />
+<link rel="stylesheet" href="<%= request.getContextPath() %>/assets/lib/fontawesome-4.7.0/css/font-awesome.min.css"/>
+
+<!-- jQuery library -->
+<script src="<%= request.getContextPath() %>/assets/lib/jquery/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="<%= request.getContextPath() %>/assets/lib/bootstrap4/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="<%= request.getContextPath() %>/assets/lib/bootstrap4/bootstrap.min.js"></script>
+
 <link href="<%= request.getContextPath() %>/css/style.css" rel="stylesheet" type="text/css">
 <link href="<%= request.getContextPath() %>/css/css0.css" rel="stylesheet" type="text/css">
 <script language="JavaScript" src="<%= request.getContextPath() %>/js/struts.js"></script>
@@ -49,29 +65,50 @@ if(user!=null && request.getParameter("doSetPerType")!=null) {
 
 <body>
 <form method="post" action="<%= request.getContextPath() %>/test/right.jsp">
-<table border="0" width="60%">
-<tr><th colspan="2">Test Right</th></tr>
-<tr class="trform">
-	<td>UserSession</td>
-	<td><% if(user != null) { %><textarea rows="10" cols="100" readonly="readonly"><%= user %></textarea><% } %></td>
-</tr>
-<tr class="trform">
-	<td>Code</td>
-	<td><input type="text" name="code" value="UMS001" size="5" /></td>
-</tr>
-<tr class="trform">
-	<td>Right</td>
-	<td><% for(int i=0; i<UserSession.RIGHTS.length; i++) {
-		%><input type="checkbox" name="right" value="<%= UserSession.RIGHTS[i] %>" /><%= UserSession.RIGHT_LABELS[i] %><% } %></td>
-</tr>
-<tr><td colspan="2">
-	<input type="submit" name="doAdd" value=" Add " />
-	<input type="submit" name="doClear" value=" Clear " />
-	<input type="submit" name="doAll" value=" All " />
-	<a href="<%= request.getContextPath() %>/home.jsp?random=<%= new java.util.Date().getTime() %>">Home</a>
-	<a href="<%= request.getContextPath() %>/index.jsp?random=<%= new java.util.Date().getTime() %>">Login</a>
-</td></tr>
-</table>
+	
+	<div class="container-fluid">
+		
+		<div class="row mt-3">
+			<div class="col-sm-2 text-right"></div>
+			<div class="col-sm-6"><h2>Test Right</h2></div>
+		</div>
+		<div class="row mt-3">
+			<div class="col-sm-2 text-right">UserSession</div>
+			<div class="col-sm-6"><% if(user != null) { %><textarea rows="10" cols="100" class="form-control" readonly="readonly"><%= user %></textarea><% } %></div>
+		</div>
+		<div class="row mt-3">
+			<div class="col-sm-2 text-right">Code</div>
+			<div class="col-sm-3"><input type="text" class="form-control" name="code" value="UMS001" size="5" /></div>
+		</div>
+		<div class="row mt-3">
+			<div class="col-sm-2 text-right">Right</div>
+			<div class="col-sm-6">
+				<div class="row">
+					<% for(int i=0; i<UserSession.RIGHTS.length; i++) { %>
+						<div class="col-sm-3"> 
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" class="custom-control-input" name="right"  id="<%= UserSession.RIGHTS[i] %>" />
+								<label class="custom-control-label" for="<%= UserSession.RIGHTS[i] %>"><%= UserSession.RIGHT_LABELS[i] %></label>
+							</div>
+						</div>
+					<% } %>
+				</div>
+			</div>
+		</div>
+		<br/>
+		<br/>
+		<br/>
+		<div class="row mt-3">
+			<div class="col-sm-2"></div>
+			<div class="col-sm-10">
+				<button type="submit" class="btn btn-success"  name="doAdd"><i class="fa fa-plus-circle"></i> Add </button>
+				<button type="submit" class="btn btn-secondary"  name="doClear"><i class="fa fa-times-circle"></i> Clear </button>				
+				<button type="submit" class="btn btn-info"  name="doAll"><i class="fa fa-list-alt"></i> All </button>
+				<a class="btn btn-info" href="<%= request.getContextPath() %>/home.jsp?random=<%= new java.util.Date().getTime() %>"><i class="fa fa-home"></i> Home</a>
+				<a class="btn btn-info" href="<%= request.getContextPath() %>/index.jsp?random=<%= new java.util.Date().getTime() %>"><i class="fa fa-sign-in"></i> Login</a>
+			</div>
+		</div>
+	</div>
 </form>
 </body>
 </html>
