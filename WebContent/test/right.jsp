@@ -69,10 +69,10 @@ if(user!=null && request.getParameter("doSetPerType")!=null) {
 	<div class="container-fluid">
 		
 		<div class="row mt-3">
-			<div class="col-sm-2 text-right"></div>
-			<div class="col-sm-6"><h2>Test Right</h2></div>
+			<div class="col-sm-2 text-right"><h2>Test Right</h2></div>
+			<div class="col-sm-6"></div>
 		</div>
-		<div class="row mt-3">
+		<div class="row mt-5">
 			<div class="col-sm-2 text-right">UserSession</div>
 			<div class="col-sm-6"><% if(user != null) { %><textarea rows="10" cols="100" class="form-control" readonly="readonly"><%= user %></textarea><% } %></div>
 		</div>
