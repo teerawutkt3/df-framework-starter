@@ -36,7 +36,7 @@ local.properties
 
 ### Eclipse Patch ###
 # Eclipse Core
-.project
+#.project
 
 # Annotation Processing
 .apt_generated
