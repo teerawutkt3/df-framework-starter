@@ -15,6 +15,25 @@
 var ctxPath = "<%= request.getContextPath() %>";
 // -->
 </script>
+
+<!-- theme bootstrap start-->
+<!-- CSS -->
+<link rel="stylesheet" href="<%= request.getContextPath() %>/assets/lib/bootstrap4/bootstrap.min.css" />
+<link rel="stylesheet" href="<%= request.getContextPath() %>/assets/lib/fontawesome-4.7.0/css/font-awesome.min.css"/>
+
+<!-- jQuery library -->
+<script src="<%= request.getContextPath() %>/assets/lib/jquery/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="<%= request.getContextPath() %>/assets/lib/bootstrap4/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="<%= request.getContextPath() %>/assets/lib/bootstrap4/bootstrap.min.js"></script>
+
+<link href="<%= request.getContextPath() %>/css/style.css" rel="stylesheet" type="text/css">
+<link href="<%= request.getContextPath() %>/css/css0.css" rel="stylesheet" type="text/css">
+<!-- theme bootstrap end-->
+
 <script language="JavaScript" src="<%= request.getContextPath() %>/js/win.js"></script>
 <script language="JavaScript" src="<%= request.getContextPath() %>/js/util.js"></script>
 <script language="JavaScript" src="<%= request.getContextPath() %>/js/struts.js"></script>

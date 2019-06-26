@@ -18,17 +18,20 @@ com.depthfirst.framework.ums.web.UserSession userSession =
 <title> DF STARTER [<%= java.net.Inet4Address.getLocalHost().getHostName() %>] </title> 
 
 <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-<link rel="stylesheet" href="<%= request.getContextPath() %>/lib/bootstrap/dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="<%= request.getContextPath() %>/lib/font-awesome/css/fontawesome-all.min.css">
+<!-- theme bootstrap start-->
+<!-- CSS -->
+<link rel="stylesheet" href="<%= request.getContextPath() %>/assets/lib/bootstrap4/bootstrap.min.css" />
+<link rel="stylesheet" href="<%= request.getContextPath() %>/assets/lib/fontawesome-4.7.0/css/font-awesome.min.css"/>
 
-<!-- theme css-->
-<link rel="stylesheet" href="<%= request.getContextPath() %>/theme/css/sb-admin-2.min.css">
- 
-<link rel="stylesheet" href="<%= request.getContextPath() %>/lib/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
-<link rel="stylesheet" href="<%= request.getContextPath() %>/lib/bootstrap-daterangepicker/daterangepicker.css">
-<link rel="stylesheet" href="<%= request.getContextPath() %>/lib/select2/dist/css/select2.min.css"> 
-<link rel="stylesheet" href="<%= request.getContextPath() %>/lib/sweetalert2/sweetalert2.min.css">
-<link rel="stylesheet"href="<%= request.getContextPath() %>/css/custom.css">
+<!-- jQuery library -->
+<script src="<%= request.getContextPath() %>/assets/lib/jquery/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="<%= request.getContextPath() %>/assets/lib/bootstrap4/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="<%= request.getContextPath() %>/assets/lib/bootstrap4/bootstrap.min.js"></script>
+<!-- theme bootstrap end-->
 
 <script language="JavaScript">
 <!--
@@ -53,7 +56,7 @@ var ctxPath = "<%= ctxPath %>";
       </a>
 
       <!-- Divider -->
-      <hr class="sidebar-divider my-0">
+      <hr class="sidebar-divider my-0"/>
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
@@ -63,7 +66,7 @@ var ctxPath = "<%= ctxPath %>";
       </li>
 
       <!-- Divider -->
-      <hr class="sidebar-divider">
+      <hr class="sidebar-divider" />
 
       <!-- Heading -->
       <div class="sidebar-heading">
