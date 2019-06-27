@@ -86,12 +86,10 @@ function doLogout() {
 		buttonsStyling: false
 	}).then(function (result) {
 		if (result.value) {
-			document.location.href = '<%= request.getContextPath() %>
-	/login.do?cmd=doLogout&ts='
-										+ (new Date()).getTime();
-							}
-						});
-	}
+			document.location.href = "<%=request.getContextPath() %>/login.do?cmd=doLogout&ts="+ new Date().getTime();
+			}
+	});
+}
 </script>
 
 </body>

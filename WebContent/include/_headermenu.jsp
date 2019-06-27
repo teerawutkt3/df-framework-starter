@@ -24,7 +24,11 @@ com.depthfirst.framework.ums.web.UserSession userSession =
 <link rel="stylesheet" href="<%= request.getContextPath() %>/assets/lib/bootstrap4/bootstrap.min.css" />
 <link rel="stylesheet" href="<%= request.getContextPath() %>/assets/lib/fontawesome-4.7.0/css/font-awesome.min.css" />
 <link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/siteBarMenu.css" />
+<script type="text/javascript">
 
+var ctxPath = "<%= request.getContextPath() %>";
+
+</script >
 <!-- jQuery library -->
 <script src="<%= request.getContextPath() %>/assets/lib/jquery/jquery.min.js"></script>
 
@@ -47,12 +51,7 @@ com.depthfirst.framework.ums.web.UserSession userSession =
 <script src="<%= request.getContextPath() %>/assets/js/validatePsnId.js"></script>
 <script src="<%= request.getContextPath() %>/assets/js/win.js"></script>
 
-<script language="JavaScript">
-<!--
-var ctxPath = "<%= ctxPath %>
-	";
-// -->
-</script>
+
 
 </head>
 
