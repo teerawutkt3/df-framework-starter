@@ -12,6 +12,7 @@
 		<constructor-arg index="0">
 	      <list>
 	        <value>ums.hbm.xml</value>
+	         <value>com/depthfirst/project/web/kanoon/domain/knn.hbm.xml</value>
 	      </list>
 		</constructor-arg>
 	</bean>

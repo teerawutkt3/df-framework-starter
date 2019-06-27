@@ -6,7 +6,8 @@
 
 	<!-- Form Beans -->
 	<form-beans>
-		<!-- Insert form bean here -->
+		<form-bean name="KNN001" type="com.depthfirst.project.web.kanoon.struts.KanoonCustomerForm" />
+		
 	</form-beans>
 
 
@@ -20,7 +21,17 @@
 
 	<!-- Action Mappings -->
 	<action-mappings>
-		 <!-- Insert action here -->
+		<action type="com.depthfirst.project.web.kanoon.struts.KanoonCustomerAction"
+				className="com.depthfirst.framework.struts.BaseDomainActionMapping"
+				path="/knn/Customer" name="KNN001" scope="session" validate="false" parameter="cmd">
+			<set-property property="serviceName" value="BaseDomainService" />
+			<set-property property="baseDomainClassName" value="com.depthfirst.project.web.kanoon.domain.KanoonCustomer" />
+			<set-property property="searchConditionClassName" value="com.depthfirst.project.web.kanoon.domain.KanoonCustomerCondition" />
+			<set-property property="defaultOrderBy" value="o.id" />
+			<forward name="form" path="/knn/CustomerForm.jsp" />
+			<forward name="list" path="/knn/CustomerList.jsp" />
+		</action>
+		
 	</action-mappings>
 
 	<!-- Message Resources -->

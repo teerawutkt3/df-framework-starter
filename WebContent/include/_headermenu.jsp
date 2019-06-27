@@ -80,13 +80,13 @@ var ctxPath = "<%= ctxPath %>
 							<_nested:define name="<%= com.depthfirst.framework.ums.web.UserSession.SESSION_KEY %>" id="currentPage" property="currentPage" type="com.depthfirst.framework.ums.web.PageInfo" />
 							<_nested:define property="code" id="moduleCode" type="String" />
 							<li class="">
-							<a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+							<a href="#homeSubmenu" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">
 							 <i class="fa fa-folder-o"></i> 
 							 <span><_nested:write property="name" /></span> 
 							 <span class="pull-right-container"> <!-- <i class="fa fa-angle-left pull-right"></i> --></span>
 							</a>
 
-								<ul class="collapse list-unstyled show" id="homeSubmenu">
+								<ul class="collapse list-unstyled <%= currentPage!=null&&moduleCode.equals(currentPage.getModuleCode())?"show":"" %>" id="homeSubmenu">
 									<_nested:iterate id="subItem" name="mainItem" indexId="subInd" property="subItemList">
 										<_nested:define property="name" id="moduleCode2" type="String" />
 										<_nested:iterate id="menuItem" name="subItem" indexId="menuInd" property="subItemList">
@@ -96,7 +96,7 @@ var ctxPath = "<%= ctxPath %>
 										<i class="fa fa-circle-thin"></i> <_nested:write property="name" /> <span class="pull-right-container"> <!-- <i class="fa fa-angle-left pull-right"></i> -->
 											</span>
 										</a>
-											<ul class="collapse list-unstyled show" id="homeSubmenu<%= subInd.intValue() %>">
+											<ul class="collapse list-unstyled <%= currentPage!=null&&moduleCode2.equals(currentPage.getPageType())?"show":"" %>" id="homeSubmenu<%= subInd.intValue() %>">
 												<_nested:iterate id="menuItem" name="subItem" indexId="menuInd" property="subItemList">
 													<_nested:define property="code" id="moduleCode3" type="String" />
 													<li <%= currentPage!=null&&moduleCode3.equals(currentPage.getPageCode())?" class='active'":"" %>>
