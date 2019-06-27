@@ -4,6 +4,8 @@
 <title> Error 400 - Depth First Co., Ltd. </title>
 <meta http-equiv="Content-Type" content="text/html; charset=windows-874">
 <link href="<%= request.getContextPath() %>/css/style.css" type="text/css" rel="stylesheet">
+<link rel="stylesheet" href="<%= request.getContextPath() %>/assets/lib/bootstrap4/bootstrap.min.css" />
+<link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/errorPage.css" />
 </head>
 <body bgcolor="#ffffff">
 <table border="0" width="500">
