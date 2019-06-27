@@ -78,7 +78,7 @@
 					<div class="col-md-12">
 						<nested:notEmpty property="searchResult.data">
 							<div class="table-responsive">
-							<table class="table table-bordered table-hover">
+							<table class="table table-bordered table-striped table-hover table-sm">
 								<tr class="info">
 								<th width="2%">&nbsp;</th>
 								<% String thOrderBy[][] = {{"วันที่/เวลา", "o.lastUpdDate"}, {"IP Address", "o.ipAddress"}, {"รหัสผู้ใช้", "o.login"},

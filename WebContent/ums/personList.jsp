@@ -19,7 +19,7 @@ function doSelect(psnId) {
 <br/>
 
 <nested:notEmpty property="searchResult.data">
-<table border="0" width="95%" align="center">
+<table border="0" width="95%" align="center"  class="table table-bordered table-striped table-hover">
 <tr>
 <th width="2%">&nbsp;</th>
 <th width="10%">รหัสประจำตัว</th>
