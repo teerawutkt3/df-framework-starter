@@ -70,43 +70,6 @@ $(document).ready(function() {
 
 });
 
-</script>
-
-<script language="JavaScript" src="<%= request.getContextPath() %>/js/win.js"></script>
-<script language="JavaScript" src="<%= request.getContextPath() %>/js/util.js"></script>
-<script language="JavaScript" src="<%= request.getContextPath() %>/js/struts.js"></script>
-<%-- <script language="JavaScript" src="<%= request.getContextPath() %>/js/popupCalendar.js"></script> --%>
-<script language="JavaScript" src="<%= request.getContextPath() %>/js/validateForm.js"></script>
-<script language="JavaScript" src="<%= request.getContextPath() %>/js/validateDate.js"></script>
-<script language="JavaScript" src="<%= request.getContextPath() %>/js/validateNumber.js"></script>
-
-<!-- <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script> -->
-<%-- <script type="text/javascript" src="<%= request.getContextPath() %>/km_back/js/jquery-1.7.2.min.js"></script> --%>
-<%-- <script language="JavaScript" type="text/javascript" src="<%= request.getContextPath() %>/lib/jquery/dist/jquery.js"></script>  --%>
-
-<!-- <!-- new theme -->
-<%-- <script language="JavaScript" src="<%= request.getContextPath() %>/lib/jquery-ui/jquery-ui.min.js"></script> --%>
-<%-- <script language="JavaScript" src="<%= request.getContextPath() %>/lib/jquery-easing/jquery.easing.min.js"></script> --%>
-<%-- <script language="JavaScript" src="<%= request.getContextPath() %>/lib/bootstrap/dist/js/bootstrap.min.js"></script> --%>
-<%-- <script language="JavaScript" src="<%= request.getContextPath() %>/js/bootstrap-datepicker.js"></script> --%>
-<%-- <script language="JavaScript" src="<%= request.getContextPath() %>/js/bootstrap-datepicker-thai.js"  charset="UTF-8"></script> --%>
-<%-- <script language="JavaScript" src="<%= request.getContextPath() %>/js/locales/bootstrap-datepicker.th.js"  charset="UTF-8"></script> --%>
-<%-- <script language="JavaScript" src="<%= request.getContextPath() %>/lib/jquery-knob/dist/jquery.knob.min.js"></script> --%>
-
-<!-- <!-- theme css-->
-
-<%-- <script language="JavaScript" src="<%= request.getContextPath() %>/theme/js/sb-admin-2.min.js"></script> --%>
-
-<%-- <script language="JavaScript" src="<%= request.getContextPath() %>/lib/dist/js/adminlte.min.js"></script> --%>
-<%-- <script language="JavaScript" src="<%= ctxPath %>/js/Chart.min.js"></script>  --%>
-<%-- <script language="JavaScript" src="<%= request.getContextPath() %>/lib/select2/dist/js/select2.full.min.js"></script> --%>
-<!-- <script language="JavaScript" type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpzziFh3XpWAxnwo0CrDvdBFr5MX-4zTM&libraries=geometry,places&sensor=false"></script> -->
-<!-- <script src="http://rawgit.com/Logicify/jquery-locationpicker-plugin/master/dist/locationpicker.jquery.js"></script> -->
-<%-- <script src="<%= request.getContextPath() %>/lib/location_picker/js/locationpicker.jquery.min.js"></script> --%>
-<%-- <script language="JavaScript" src="<%= request.getContextPath() %>/lib/location_picker/js/locationpicker.jquery.js"></script>  --%>
-<%-- <script language="JavaScript" src="<%= request.getContextPath() %>/lib/sweetalert2/sweetalert2.all.min.js"></script> --%>
-
-<script language="JavaScript">
 
 function doLogout() {
  
