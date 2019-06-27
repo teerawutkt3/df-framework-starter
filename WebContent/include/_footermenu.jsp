@@ -1,7 +1,7 @@
 
  </div>
         <!-- /.container-fluid -->
-
+</div>
       </div>
       <!-- End of Main Content -->
 
@@ -141,6 +141,13 @@ function doLogout() {
 	});
 }
 $(document).ready(function(){
+	
+    $('#sidebarCollapse').on('click', function () {
+        $('#sidebar').toggleClass('active');
+        $(".dataTables_scrollHeadInner").css({ "width": "100%" });
+        $(".table ").css({ "width": "100%" });
+    });
+    
 	$(".trigger").click(function(){
 		$(".panel").toggle();
 		$(this).toggleClass("active");
