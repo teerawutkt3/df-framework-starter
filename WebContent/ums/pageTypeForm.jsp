@@ -35,7 +35,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<nested:equal property="editable" value="true"><input class="btn btn-success" type="button" value=" บันทึก " onclick="doCmd('doSave')" /></nested:equal>
-						<input type="button" value=" กลับไป " class="btn btn-default" onclick="doCmd('list')" />
+						<input type="button" value=" กลับไป " class="btn btn-secondary" onclick="doCmd('list')" />
 					</div>
 				</div>
 			</div>

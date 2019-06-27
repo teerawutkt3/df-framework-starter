@@ -79,20 +79,20 @@ var ctxPath = "<%= request.getContextPath() %>";
 							<_nested:define name="<%= com.depthfirst.framework.ums.web.UserSession.SESSION_KEY %>" id="currentPage" property="currentPage" type="com.depthfirst.framework.ums.web.PageInfo" />
 							<_nested:define property="code" id="moduleCode" type="String" />
 							<li class="">
-							<a href="#homeSubmenu" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">
+							<a href="#mainMenu<%= mainInd.intValue() %>" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">
 							 <i class="fa fa-folder-o"></i> 
 							 <span><_nested:write property="name" /></span> 
 							 <span class="pull-right-container"> <!-- <i class="fa fa-angle-left pull-right"></i> --></span>
 							</a>
 
-								<ul class="collapse list-unstyled <%= currentPage!=null&&moduleCode.equals(currentPage.getModuleCode())?"show":"" %>" id="homeSubmenu">
+								<ul class="collapse list-unstyled <%= currentPage!=null&&moduleCode.equals(currentPage.getModuleCode())?"show":"" %>" id="mainMenu<%= mainInd.intValue() %>">
 									<_nested:iterate id="subItem" name="mainItem" indexId="subInd" property="subItemList">
 										<_nested:define property="name" id="moduleCode2" type="String" />
 										<_nested:iterate id="menuItem" name="subItem" indexId="menuInd" property="subItemList">
 										</_nested:iterate>
 										<li class="treeview <%= currentPage!=null&&moduleCode2.equals(currentPage.getPageType())?" menu-open":"" %>">
 										<a href="#homeSubmenu<%= subInd.intValue() %>" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> 
-										<i class="fa fa-circle-thin"></i> <_nested:write property="name" /> <span class="pull-right-container"> <!-- <i class="fa fa-angle-left pull-right"></i> -->
+										<i class="fa fa-minus-square-o"></i> <_nested:write property="name" /> <span class="pull-right-container"> <!-- <i class="fa fa-angle-left pull-right"></i> -->
 											</span>
 										</a>
 											<ul class="collapse list-unstyled <%= currentPage!=null&&moduleCode2.equals(currentPage.getPageType())?"show":"" %>" id="homeSubmenu<%= subInd.intValue() %>">
@@ -100,7 +100,7 @@ var ctxPath = "<%= request.getContextPath() %>";
 													<_nested:define property="code" id="moduleCode3" type="String" />
 													<li <%= currentPage!=null&&moduleCode3.equals(currentPage.getPageCode())?" class='active'":"" %>>
 													<a data-toggle="tooltip" data-placement="right" title="<_nested:write property="name" />" href="<%= request.getContextPath() %><_nested:write property="path" />?random=<%= random %>">
-														&nbsp;&nbsp;&nbsp;<i class="fa fa-minus"></i> <_nested:write property="name" />
+														&nbsp;&nbsp;&nbsp;<i class="fa fa-circle-thin"></i> <_nested:write property="name" />
 													</a></li>
 												</_nested:iterate>
 											</ul></li>
