@@ -94,7 +94,7 @@
 							<td align="center" nowrap="nowrap">
 								&nbsp;<a class="btn btn-info btn-xs" title="ดูข้อมูล" href="javascript:doCmd('goView', <%= ind %>)"><i class="fa fa-search" aria-hidden="true"></i></a>&nbsp;
 								<nested:equal name="<%= pageCode %>" property="canUpdate" value="true">&nbsp;<a title="แก้ไข" class="btn btn-warning btn-xs" href="javascript:doCmd('goUpdate', <%= ind %>)"><i class="fa fa-edit" aria-hidden="true"></i></a>&nbsp;</nested:equal>
-								<nested:equal name="<%= pageCode %>" property="canDelete" value="true">&nbsp;<a title="ลบข้อมูล" class="btn btn-danger btn-xs" href="javascript:doCmd('doDelete', <%= ind %>)"><i class="fal fa-trash-alt" aria-hidden="true"></i></a>&nbsp;</nested:equal>
+								<nested:equal name="<%= pageCode %>" property="canDelete" value="true">&nbsp;<a title="ลบข้อมูล" class="btn btn-danger btn-xs" href="javascript:doCmd('doDelete', <%= ind %>)"><i class="fa fa-trash" aria-hidden="true"></i></a>&nbsp;</nested:equal>
 								<nested:equal name="<%= pageCode %>" property="canPrint" value="true">&nbsp;<a title="ส่งออกสิทธิเป็นไฟล์ Excel" class="btn btn-success btn-xs" href="javascript:doCmd('exportRightExcel', <%= ind %>)"><i class="far fa-file-excel" aria-hidden="true"></i></a>&nbsp;</nested:equal>
 							</td>
 						</tr>
