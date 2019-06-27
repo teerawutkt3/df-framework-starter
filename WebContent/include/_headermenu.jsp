@@ -35,6 +35,18 @@ com.depthfirst.framework.ums.web.UserSession userSession =
 <script src="<%= request.getContextPath() %>/assets/lib/bootstrap4/bootstrap.min.js"></script>
 <!-- theme bootstrap end-->
 
+<!-- js framework -->
+<script src="<%= request.getContextPath() %>/assets/js/struts.js"></script>
+<script src="<%= request.getContextPath() %>/assets/js/Style.js"></script>
+<script src="<%= request.getContextPath() %>/assets/js/tab.js"></script>
+<script src="<%= request.getContextPath() %>/assets/js/tree.js"></script>
+<script src="<%= request.getContextPath() %>/assets/js/util.js"></script>
+<script src="<%= request.getContextPath() %>/assets/js/validateDate.js"></script>
+<script src="<%= request.getContextPath() %>/assets/js/validateForm.js"></script>
+<script src="<%= request.getContextPath() %>/assets/js/validateNumber.js"></script>
+<script src="<%= request.getContextPath() %>/assets/js/validatePsnId.js"></script>
+<script src="<%= request.getContextPath() %>/assets/js/win.js"></script>
+
 <script language="JavaScript">
 <!--
 var ctxPath = "<%= ctxPath %>
