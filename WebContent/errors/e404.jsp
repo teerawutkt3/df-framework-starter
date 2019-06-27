@@ -16,7 +16,7 @@
 		<span>4</span> <span><span class="screen-reader-text">0</span></span> <span>4</span>
 	</section>
 	<div class="link-container">
-		<input type="button" class="btn bnt-info" value=" Back " onClick="window.history.back()">
+		<input type="button" class="btn btn-info" value=" Back " onClick="window.history.back()">
 	</div>
 
 </body>

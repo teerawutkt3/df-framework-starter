@@ -246,7 +246,7 @@ function checkToDateStatus(val) {
 					<nested:equal property="canChangePassword" value="true"><nested:equal property="createMode" value="false">
 						<input class="btn btn-warning" type="button" value=" กำหนดรหัสผ่าน " onclick="doCmd('goPassword')" /></nested:equal></nested:equal>
 				</nested:equal>
-				<input type="button" class="btn btn-default" value=" กลับไป " onclick="doCmd('list')" />
+				<input type="button" class="btn btn-secondary" value=" กลับไป " onclick="doCmd('list')" />
 			</div>
 		</div>
 	</div>
