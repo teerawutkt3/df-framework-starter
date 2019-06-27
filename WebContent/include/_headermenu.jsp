@@ -55,9 +55,9 @@ var ctxPath = "<%= ctxPath %>
 			</div>
 
 			<ul class="list-unstyled components">
-				<p>
-					DF <sup>starter</sup>
-				</p>
+				<h3 class="text-center">
+					DF Framework
+				</h3>
 				<li><a href="index.html"> <i class="fa fa-tachometer"></i> Dashboard
 				</a></li>
 				<li><a href="dashboard2.html"> <i class="fa fa-tachometer"></i> Dashboard2
@@ -67,8 +67,11 @@ var ctxPath = "<%= ctxPath %>
 						<_nested:iterate id="mainItem" indexId="mainInd" property="menuItems">
 							<_nested:define name="<%= com.depthfirst.framework.ums.web.UserSession.SESSION_KEY %>" id="currentPage" property="currentPage" type="com.depthfirst.framework.ums.web.PageInfo" />
 							<_nested:define property="code" id="moduleCode" type="String" />
-							<li class=""><a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> <i class="fa fa-<_nested:write property="code" />" aria-hidden="true"></i> <span><_nested:write property="name" /></span> <span class="pull-right-container"> <!-- <i class="fa fa-angle-left pull-right"></i> -->
-								</span>
+							<li class="">
+							<a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+							 <i class="fa fa-folder-o"></i> 
+							 <span><_nested:write property="name" /></span> 
+							 <span class="pull-right-container"> <!-- <i class="fa fa-angle-left pull-right"></i> --></span>
 							</a>
 
 								<ul class="collapse list-unstyled show" id="homeSubmenu">
@@ -76,13 +79,17 @@ var ctxPath = "<%= ctxPath %>
 										<_nested:define property="name" id="moduleCode2" type="String" />
 										<_nested:iterate id="menuItem" name="subItem" indexId="menuInd" property="subItemList">
 										</_nested:iterate>
-										<li class="treeview <%= currentPage!=null&&moduleCode2.equals(currentPage.getPageType())?" menu-open":"" %>"><a href="#homeSubmenu<%= subInd.intValue() %>" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> <_nested:write property="name" /> <span class="pull-right-container"> <!-- <i class="fa fa-angle-left pull-right"></i> -->
+										<li class="treeview <%= currentPage!=null&&moduleCode2.equals(currentPage.getPageType())?" menu-open":"" %>">
+										<a href="#homeSubmenu<%= subInd.intValue() %>" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> 
+										<i class="fa fa-circle-thin"></i> <_nested:write property="name" /> <span class="pull-right-container"> <!-- <i class="fa fa-angle-left pull-right"></i> -->
 											</span>
 										</a>
 											<ul class="collapse list-unstyled show" id="homeSubmenu<%= subInd.intValue() %>">
 												<_nested:iterate id="menuItem" name="subItem" indexId="menuInd" property="subItemList">
 													<_nested:define property="code" id="moduleCode3" type="String" />
-													<li <%= currentPage!=null&&moduleCode3.equals(currentPage.getPageCode())?" class='active'":"" %>><a data-toggle="tooltip" data-placement="right" title="<_nested:write property="name" />" href="<%= request.getContextPath() %><_nested:write property="path" />?random=<%= random %>"> <_nested:write property="name" />
+													<li <%= currentPage!=null&&moduleCode3.equals(currentPage.getPageCode())?" class='active'":"" %>>
+													<a data-toggle="tooltip" data-placement="right" title="<_nested:write property="name" />" href="<%= request.getContextPath() %><_nested:write property="path" />?random=<%= random %>">
+														&nbsp;&nbsp;&nbsp;<i class="fa fa-minus"></i> <_nested:write property="name" />
 													</a></li>
 												</_nested:iterate>
 											</ul></li>
@@ -104,12 +111,13 @@ var ctxPath = "<%= ctxPath %>
 								<ul class="nav navbar-nav ml-auto">
 									<li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
 									<li class="nav-item"><a class="nav-link" href="#">Dashboard2</a></li>
-									<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Dropdown </a>
-										<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-											<a class="dropdown-item" href="#">Action</a> <a class="dropdown-item" href="#">Another action</a> <a href="javascript:doLogout();" data-toggle="modal" data-target="#logoutModal" class="dropdown-item" href="#">Logout</a>
-										</div></li>
 									<li class="nav-item"><a class="nav-link" href="#">Page</a></li>
 									<li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign in</a></li>
+									<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> User </a>
+										<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+											<a class="dropdown-item" href="#">Action</a> <a class="dropdown-item" href="#">Another action</a> <a href="javascript:doLogout();" data-toggle="modal" data-target="#logoutModal" class="dropdown-item" href="#">Logout</a>
+										</div>
+									</li>
 								</ul>
 							</div>
 						</div>
