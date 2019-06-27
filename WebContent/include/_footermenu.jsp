@@ -1,54 +1,47 @@
 
- </div>
-        <!-- /.container-fluid -->
 </div>
-      </div>
-      <!-- End of Main Content -->
+<!-- /.container-fluid -->
+<footer id="sticky-footer" class="bg-white text-dark-50">
+	<div class="container text-center">
+		<strong> Copyright &copy; Depthfirst Co.,Ltd. </strong> All right reserved.
+	</div>
+	<!-- <a class="scroll-to-top rounded" class="btn" href="#page-top"> <i class="fa fa-angle-up" ></i></a> -->
+</footer>
+</div>
+</div>
 
-      <!-- Footer -->
-      <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <strong>
-				Copyright &copy; Depthfirst Co.,Ltd. 
-			</strong> All right reserved.          </div>
-        </div>
-      </footer>
-      <!-- End of Footer -->
+<!-- <footer class="sticky-footer bg-white">
+	<div class="container my-auto">
+		<div class="copyright text-center my-auto">
+			<strong> Copyright &copy; Depthfirst Co.,Ltd. </strong> All right reserved.
+		</div>
+	</div>
+</footer> -->
+<!-- Scroll to Top Button-->
 
-    </div>
-    <!-- End of Content Wrapper -->
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+				<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">×</span>
+				</button>
+			</div>
+			<div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+			<div class="modal-footer">
+				<button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+				<a class="btn btn-primary" href="login.html">Logout</a>
+			</div>
+		</div>
+	</div>
+</div>
 
-  </div>
-  <!-- End of Page Wrapper -->
-
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
-
-  <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
-        </div>
-      </div>
-    </div>
-  </div>
-	
-<% }catch(Exception _exception){ logger.error(request.getRequestURI(), _exception);_exception.printStackTrace(); } %></td></tr>
+<% }catch(Exception _exception){ logger.error(request.getRequestURI(), _exception);_exception.printStackTrace(); } %></td>
+</tr>
 <!--end container-->
-<%@ include file="/include/_responseMessage.jsp" %> 
+<%@ include file="/include/_responseMessage.jsp"%>
 <!--end footer-->
 
 <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpzziFh3XpWAxnwo0CrDvdBFr5MX-4zTM&libraries=geometry,places&sensor=false"></script> -->
@@ -107,7 +100,8 @@ $('[data-toggle="tooltip"]').tooltip()
 <%-- <script language="JavaScript" src="<%= request.getContextPath() %>/js/locales/bootstrap-datepicker.th.js"  charset="UTF-8"></script> --%>
 <%-- <script language="JavaScript" src="<%= request.getContextPath() %>/lib/jquery-knob/dist/jquery.knob.min.js"></script> --%>
 
-<!-- <!-- theme css-->  -->
+<!-- <!-- theme css-->
+
 <%-- <script language="JavaScript" src="<%= request.getContextPath() %>/theme/js/sb-admin-2.min.js"></script> --%>
 
 <%-- <script language="JavaScript" src="<%= request.getContextPath() %>/lib/dist/js/adminlte.min.js"></script> --%>
@@ -136,25 +130,31 @@ function doLogout() {
 		buttonsStyling: false
 	}).then(function (result) {
 		if (result.value) {
-			document.location.href = '<%= request.getContextPath() %>/login.do?cmd=doLogout&ts='+(new Date()).getTime();
-		}
+			document.location.href = '<%= request.getContextPath() %>
+	/login.do?cmd=doLogout&ts='
+										+ (new Date()).getTime();
+							}
+						});
+	}
+	$(document).ready(function() {
+
+		$('#sidebarCollapse').on('click', function() {
+			$('#sidebar').toggleClass('active');
+			$(".dataTables_scrollHeadInner").css({
+				"width" : "100%"
+			});
+			$(".table ").css({
+				"width" : "100%"
+			});
+		});
+
+		$(".trigger").click(function() {
+			$(".panel").toggle();
+			$(this).toggleClass("active");
+			return false;
+		});
+
 	});
-}
-$(document).ready(function(){
-	
-    $('#sidebarCollapse').on('click', function () {
-        $('#sidebar').toggleClass('active');
-        $(".dataTables_scrollHeadInner").css({ "width": "100%" });
-        $(".table ").css({ "width": "100%" });
-    });
-    
-	$(".trigger").click(function(){
-		$(".panel").toggle();
-		$(this).toggleClass("active");
-		return false;
-	});
- 
-});
 </script>
 
 </body>
