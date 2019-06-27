@@ -1,7 +1,7 @@
 
 </div>
 <!-- /.container-fluid -->
-<footer id="sticky-footer" class="bg-white text-dark-50">
+<footer id="sticky-footer" class="py-4 bg-white text-dark-50 mt-4">
 	<div class="container text-center">
 		<strong> Copyright &copy; Depthfirst Co.,Ltd. </strong> All right reserved.
 	</div>
@@ -46,37 +46,30 @@
 
 <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpzziFh3XpWAxnwo0CrDvdBFr5MX-4zTM&libraries=geometry,places&sensor=false"></script> -->
 <script language="JavaScript">
-<!--
-createErrorPane(getForm());
-// -->
-
-$('.datepicker').datepicker({language:'th-th',format:'dd/mm/yyyy'})
 $('body').on('click', '.day', function(){
 	jQuery('.datepicker-dropdown').remove();
 });
 
+$(document).ready(function() {
 
-$('.select2').select2()
-$('[data-toggle="tooltip"]').tooltip()
+	$('#sidebarCollapse').on('click', function() {
+		$('#sidebar').toggleClass('active');
+		$(".dataTables_scrollHeadInner").css({
+			"width" : "100%"
+		});
+		$(".table ").css({
+			"width" : "100%"
+		});
+	});
 
-// var ctx = document.getElementById('myChart').getContext('2d');
-// var myDoughnutChart = new Chart(ctx, {
-//     type: 'doughnut',
-//     data: {
-//         labels: ["January", "February", "March", "May"],
-//         datasets: [{
-//             label: "My First dataset",
-//             backgroundColor: [
-//                 'red',
-//                 'blue',
-//                 'green',
-//                 'orange',
-//             ],
-//             data: [2, 10, 5, 7],
-//         }]
-//     },
-//     options: {}
-// });
+	$(".trigger").click(function() {
+		$(".panel").toggle();
+		$(this).toggleClass("active");
+		return false;
+	});
+
+});
+
 </script>
 
 <script language="JavaScript" src="<%= request.getContextPath() %>/js/win.js"></script>
@@ -136,25 +129,6 @@ function doLogout() {
 							}
 						});
 	}
-	$(document).ready(function() {
-
-		$('#sidebarCollapse').on('click', function() {
-			$('#sidebar').toggleClass('active');
-			$(".dataTables_scrollHeadInner").css({
-				"width" : "100%"
-			});
-			$(".table ").css({
-				"width" : "100%"
-			});
-		});
-
-		$(".trigger").click(function() {
-			$(".panel").toggle();
-			$(this).toggleClass("active");
-			return false;
-		});
-
-	});
 </script>
 
 </body>
