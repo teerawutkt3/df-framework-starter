@@ -72,7 +72,7 @@ var ctxPath = "<%= ctxPath %>";
       <div class="sidebar-heading">
         Interface
       </div>
-	<%-- <_nested:root name="<%= com.depthfirst.framework.ums.web.UserSession.SESSION_KEY %>">
+	 <_nested:root name="<%= com.depthfirst.framework.ums.web.UserSession.SESSION_KEY %>">
 	<_nested:notEmpty property="menuItems">
 						<_nested:iterate id="mainItem" indexId="mainInd" property="menuItems">
 							<_nested:define name="<%= com.depthfirst.framework.ums.web.UserSession.SESSION_KEY %>" id="currentPage" property="currentPage" type="com.depthfirst.framework.ums.web.PageInfo" />
@@ -108,7 +108,7 @@ var ctxPath = "<%= ctxPath %>";
 							</li>
 						</_nested:iterate>
 					</_nested:notEmpty>
-	</_nested:root> --%>
+	</_nested:root> 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
