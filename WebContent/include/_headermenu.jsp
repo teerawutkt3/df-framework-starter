@@ -40,16 +40,14 @@ var ctxPath = "<%= request.getContextPath() %>";
 <!-- theme bootstrap end-->
 
 <!-- js framework -->
-<script src="<%= request.getContextPath() %>/assets/js/struts.js"></script>
-<script src="<%= request.getContextPath() %>/assets/js/Style.js"></script>
-<script src="<%= request.getContextPath() %>/assets/js/tab.js"></script>
-<script src="<%= request.getContextPath() %>/assets/js/tree.js"></script>
+<script src="<%= request.getContextPath() %>/assets/js/win.js"></script>
 <script src="<%= request.getContextPath() %>/assets/js/util.js"></script>
+<script src="<%= request.getContextPath() %>/assets/js/struts.js"></script> 
 <script src="<%= request.getContextPath() %>/assets/js/validateDate.js"></script>
 <script src="<%= request.getContextPath() %>/assets/js/validateForm.js"></script>
 <script src="<%= request.getContextPath() %>/assets/js/validateNumber.js"></script>
 <script src="<%= request.getContextPath() %>/assets/js/validatePsnId.js"></script>
-<script src="<%= request.getContextPath() %>/assets/js/win.js"></script>
+<script src="<%= request.getContextPath() %>/assets/js/Style.js"></script> 
 
 
 
