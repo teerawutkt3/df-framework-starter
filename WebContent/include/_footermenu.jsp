@@ -1,12 +1,12 @@
 
 </div>
 <!-- /.container-fluid -->
-<footer id="sticky-footer" class="py-4 bg-white text-dark-50 mt-4">
-	<div class="container text-center">
-		<strong> Copyright &copy; Depthfirst Co.,Ltd. </strong> All right reserved.
-	</div>
+<!-- <footer id="sticky-footer" class="py-4 bg-white text-dark-50 mt-4"> -->
+<!-- 	<div class="container text-center"> -->
+<!-- 		<strong> Copyright &copy; Depthfirst Co.,Ltd. </strong> All right reserved. -->
+<!-- 	</div> -->
+<!-- </footer> -->
 	<!-- <a class="scroll-to-top rounded" class="btn" href="#page-top"> <i class="fa fa-angle-up" ></i></a> -->
-</footer>
 </div>
 </div>
 
