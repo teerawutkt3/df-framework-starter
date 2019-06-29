@@ -74,10 +74,10 @@
 			</div>
 		</div>
 		
-		<div class="box box-primary">
+		<div class="box box-primary  mt-4">
 			<div class="box-body table-responsive">
 				<nested:notEmpty property="searchResult.data">
-					<table class="table table-bordered table-hover" border="0" width="95%" align="center">
+					<table class="table table-bordered table-striped table-hover table-sm" border="0" width="95%" align="center">
 						<tr class="info">
 							<th width="2%">&nbsp;</th>
 							<% String thOrderBy[][] = {{"รหัสหน้าจอ", "o.code"}, {"ชื่อหน้าจอ", "o.name"}, {"ระบบงาน", "o.module"}, {"ประเภทหน้าจอ", "o.pageType"}, {"ลำดับ", "o.order"}};
@@ -94,9 +94,9 @@
 						<td><nested:write name="result" property="pageType.name" /></td>
 						<td><nested:write name="result" property="order" /></td>
 						<td align="center" nowrap="nowrap">
-							&nbsp;<a class="btn btn-info btn-xs" title="ดูข้อมูล" href="javascript:doCmd('goView', <%= ind %>)"><i class="fa fa-search" aria-hidden="true"></i></a>&nbsp;
-							<nested:equal name="<%= pageCode %>" property="canUpdate" value="true">&nbsp;<a title="แก้ไข" class="btn btn-warning btn-xs" href="javascript:doCmd('goUpdate', <%= ind %>)"><i class="fa fa-edit" aria-hidden="true"></i></a>&nbsp;</nested:equal>
-							<nested:equal name="<%= pageCode %>" property="canDelete" value="true">&nbsp;<a title="ลบข้อมูล" class="btn btn-danger btn-xs" href="javascript:doCmd('doDelete', <%= ind %>)"><i class="fa fa-trash" aria-hidden="true"></i></a>&nbsp;</nested:equal>
+							&nbsp;<a class="btn btn-info btn-sm" title="ดูข้อมูล" href="javascript:doCmd('goView', <%= ind %>)"><i class="fa fa-search" aria-hidden="true"></i></a>&nbsp;
+							<nested:equal name="<%= pageCode %>" property="canUpdate" value="true">&nbsp;<a title="แก้ไข" class="btn btn-warning btn-sm" href="javascript:doCmd('goUpdate', <%= ind %>)"><i class="fa fa-edit" aria-hidden="true"></i></a>&nbsp;</nested:equal>
+							<nested:equal name="<%= pageCode %>" property="canDelete" value="true">&nbsp;<a title="ลบข้อมูล" class="btn btn-danger btn-sm" href="javascript:doCmd('doDelete', <%= ind %>)"><i class="fa fa-trash" aria-hidden="true"></i></a>&nbsp;</nested:equal>
 						</td>
 					</tr>
 					</nested:iterate>

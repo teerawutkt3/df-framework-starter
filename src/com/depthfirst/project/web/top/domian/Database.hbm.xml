@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping
+  PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.depthfirst.project.web.top.domian">
+
+	<!-- TM_TOP_CUSTOMER -->
+	<class name="com.depthfirst.project.web.top.domian.Customer" table="TM_TOP_CUSTOMER" batch-size="10">
+		<id name="id" type="long" unsaved-value="0">
+			<column name="TM_TOP_CUSTOMER_ID" not-null="true" />
+			<generator class="increment" />
+		</id>
+		<timestamp name="lastUpdDate" column="LAST_UPD_DATE" />
+		<property name="active" column="ACTIVE" />
+		<property name="address" column="ADDRESS" length="220" />
+		<property name="code" column="CODE" length="17" />
+		<property name="name" column="NAME" length="100" />
+		<property name="createdBy" column="CREATED_BY" length="20" />
+		<property name="createdDate" column="CREATED_DATE" />
+		<property name="lastUpdBy" column="LAST_UPD_BY" length="20" />
+	</class>
+
+	<!-- T_TOP_PROJECT -->
+	<class name="com.depthfirst.project.web.top.domian.Project" table="T_TOP_PROJECT" batch-size="10">
+		<id name="id" type="long" unsaved-value="0">
+			<column name="T_TOP_PROJECT_ID" not-null="true" />
+			<generator class="increment" />
+		</id>
+		<timestamp name="lastUpdDate" column="LAST_UPD_DATE" />
+		<property name="active" column="ACTIVE" />
+		<property name="budget" column="BUDGET" />
+		<property name="code" column="CODE" length="17" />
+		<many-to-one name="customer" class="com.depthfirst.project.web.top.domian.Customer" column="CUSTOMER_ID" />
+		<property name="name" column="NAME" length="200" />
+		<property name="createdBy" column="CREATED_BY" length="20" />
+		<property name="createdDate" column="CREATED_DATE" />
+		<property name="lastUpdBy" column="LAST_UPD_BY" length="20" />
+	</class>
+
+	<!-- T_TOP_TASK -->
+	<class name="com.depthfirst.project.web.top.domian.Task" table="T_TOP_TASK" batch-size="10">
+		<id name="id" type="long" unsaved-value="0">
+			<column name="T_TOP_TASK_ID" not-null="true" />
+			<generator class="increment" />
+		</id>
+		<timestamp name="lastUpdDate" column="LAST_UPD_DATE" />
+		<property name="description" column="DESCRIPTION" length="2000" />
+		<property name="eatDay" column="EAT_DAY" />
+		<property name="status" column="STATUS" length="10" />
+		<property name="title" column="TITLE" length="200" />
+		<property name="createdBy" column="CREATED_BY" length="20" />
+		<property name="createdDate" column="CREATED_DATE" />
+		<property name="lastUpdBy" column="LAST_UPD_BY" length="20" />
+	</class>
+
+
+
+</hibernate-mapping>

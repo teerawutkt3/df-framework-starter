@@ -6,7 +6,9 @@
 
 	<!-- Form Beans -->
 	<form-beans>
-		<!-- Insert form bean here -->
+		<form-bean name="TOP001" type="com.depthfirst.project.web.top.strust.CustomerForm" />
+		<form-bean name="TOP002" type="com.depthfirst.project.web.top.strust.ProjectForm" />
+		<form-bean name="TOP003" type="com.depthfirst.framework.struts.BaseForm" />
 	</form-beans>
 
 
@@ -20,7 +22,32 @@
 
 	<!-- Action Mappings -->
 	<action-mappings>
-		 <!-- Insert action here -->
+		<action type="com.depthfirst.project.web.top.strust.CustomerAction" className="com.depthfirst.framework.struts.BaseDomainActionMapping" path="/top/customer" name="TOP001" scope="session" validate="false" parameter="cmd">
+			<set-property property="serviceName" value="BaseDomainService" />
+			<set-property property="baseDomainClassName" value="com.depthfirst.project.web.top.domian.Customer" />
+			<set-property property="searchConditionClassName" value="com.depthfirst.project.web.top.strust.CostomerCondition" />
+			<!-- <set-property property="defaultOrderBy" value="o.module.order,o.pageType.order,o.order,o.code" /> -->
+			<forward name="form" path="/top/customerForm.jsp" />
+			<forward name="list" path="/top/customerList.jsp" />
+		</action>
+
+		<action type="com.depthfirst.project.web.top.strust.ProjectAction" className="com.depthfirst.framework.struts.BaseDomainActionMapping" path="/top/project" name="TOP002" scope="session" validate="false" parameter="cmd">
+			<set-property property="serviceName" value="BaseDomainService" />
+			<set-property property="baseDomainClassName" value="com.depthfirst.project.web.top.domian.Project" />
+			<set-property property="searchConditionClassName" value="com.depthfirst.project.web.top.strust.ProjectCondition" />
+			<!-- <set-property property="defaultOrderBy" value="o.module.order,o.pageType.order,o.order,o.code" /> -->
+			<forward name="form" path="/top/projectForm.jsp" />
+			<forward name="list" path="/top/projectList.jsp" />
+		</action>
+
+		<action type="com.depthfirst.project.web.top.strust.TaskAction" className="com.depthfirst.framework.struts.BaseDomainActionMapping" path="/top/task" name="TOP003" scope="session" validate="false" parameter="cmd">
+			<set-property property="serviceName" value="BaseDomainService" />
+			<set-property property="baseDomainClassName" value="com.depthfirst.project.web.top.domian.Task" />
+			<set-property property="searchConditionClassName" value="com.depthfirst.project.web.top.strust.TaskCondition" />
+			<!-- <set-property property="defaultOrderBy" value="o.module.order,o.pageType.order,o.order,o.code" /> -->
+			<forward name="form" path="/top/taskForm.jsp" />
+			<forward name="list" path="/top/taskList.jsp" />
+		</action>
 	</action-mappings>
 
 	<!-- Message Resources -->

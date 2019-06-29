@@ -56,17 +56,17 @@ function initCheckRightAll() {
 				<h3 class="box-title"><nested:write property="formModeStr" />ข้อมูลกลุ่มผู้ใช้งาน</th></h3>
 			</div>
 			<div class="box-body">
-				<div class="row">
+				<div class="row form-group">
 					<div class="col-md-2">รหัสกลุ่มผู้ใช้งาน</div>
-					<div class="col-md-1"><nested:text styleClass="form-control" property="formData.code" size="10" maxlength="10" lang="property['รหัสกลุ่มผู้ใช้งาน',required,,10]" disabled="<%= !editable.booleanValue() %>" /></div>
+					<div class="col-md-2"><nested:text styleClass="form-control" property="formData.code" size="10" maxlength="10" lang="property['รหัสกลุ่มผู้ใช้งาน',required,,10]" disabled="<%= !editable.booleanValue() %>" /></div>
 					<div class="col-md-2 col-md-offset-3">ชื่อกลุ่มผู้ใช้งาน</div>
 					<div class="col-md-2"><nested:text styleClass="form-control" property="formData.name" size="20" maxlength="50" lang="property['ชื่อกลุ่มผู้ใช้งาน',required,,50]" disabled="<%= !editable.booleanValue() %>" /></div>
 				</div>
-				<div class="row">
+				<div class="row form-group">
 					<div class="col-md-2">รายละเอียด</div>
 					<div class="col-md-3"><nested:text styleClass="form-control" property="formData.description" size="50" maxlength="200" lang="property['รายละเอียด',,,200]" disabled="<%= !editable.booleanValue() %>" /></div>
 				</div>
-				<div class="row">
+				<div class="row form-group">
 					<div class="col-md-2">สิทธิอัตโนมัติ</div>
 					<div class="col-md-2">
 						<nested:select styleClass="form-control" property="formData.isAuto" disabled="<%= !editable.booleanValue() %>">
@@ -81,7 +81,7 @@ function initCheckRightAll() {
 					</div>
 				</div>
 				<hr>
-				<div class="row">
+				<div class="row form-group">
 					<div class="col-md-12">
 						<nested:equal property="editable" value="true"><tr class="trform"><td colspan="4"><a name="a_page" />
 							<input class="btn btn-default" type="button" name="addPrivBtn" lang="property[hasPriv]" value="เพิ่มสิทธิของกลุ่มผู้ใช้งาน" onclick="popupCmd('listModulePage', 800, 600)" />
@@ -89,10 +89,10 @@ function initCheckRightAll() {
 						</td></tr></nested:equal>
 					</div>
 				</div>
-				<div class="row">
+				<div class="row form-group">
 					<div class="col-md-12">
 						<div class="table-responsive">
-							<table class="table table-bordered table-hover">
+							<table class="table table-bordered table-sm table-striped table-hover">
 								<tr>
 									<nested:equal property="editable" value="true"><th width="2%"><input type="checkbox" name="delete_all" onclick="doCheckAll(this.form, 'delete_all', 'delete_ind')" /></th></nested:equal>
 									<th>ระบบงาน
