@@ -16,14 +16,14 @@
 			<div class="card-header"><b><nested:write property="formModeStr" /> Customer</b></div>
 			<div class="card-body">
 			
-<!-- 				<div class="row form-group"> -->
-<!-- 					<div class="col-sm-2 text-right"> -->
-<!-- 						<label> Code: </label> -->
-<!-- 					</div> -->
-<!-- 					<div class="col-sm-3"> -->
-<%-- 						<nested:text styleClass="form-control" property="formData.code" lang="property['code',required,,]" disabled="<%= !editable.booleanValue() %>" />						 --%>
-<!-- 					</div>					 -->
-<!-- 				</div> -->
+				<div class="row form-group">
+					<div class="col-sm-2 text-right">
+						<label> Code: </label>
+					</div>
+					<div class="col-sm-3">
+						<nested:text styleClass="form-control" property="formData.code" lang="property['code',required,,]" disabled="<%= !editable.booleanValue() %>" />						
+					</div>					
+				</div>
 				<div class="row form-group">					
 					<div class="col-sm-2 text-right">
 						<label> Name: </label>

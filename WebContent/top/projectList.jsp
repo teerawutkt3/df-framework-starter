@@ -76,9 +76,7 @@
 									<td class="text-center"><%= ind.intValue()+1 %></td>
 									<td class="text-center"><nested:write name="result" property="code" /></td>
 									<td><nested:write name="result" property="name" /></td>
-									<td>
-									<button class="btn btn-sm btn-primary" type="button" onclick="js.callAddressModal(<nested:write name="result" property="address" />)">Address</button>
-									</td>
+									<td><nested:write name="result" property="address" /></td>
 									<td class="text-center"><nested:write name="result" property="createdDateStr" /></td>
 									<td class="text-right">
 										<a class="btn btn-info btn-sm" title="ดูข้อมูล" href="javascript:doCmd('goView', <%= ind %>)"><i class="fa fa-eye"></i></a>
@@ -95,42 +93,4 @@
 		</div>
 	</div>
 </nested:form>
-
-<!-- The Address -->
-<div class="modal" id="addressModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title">Address</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-
-      <!-- Modal body -->
-      <div class="modal-body">
-       	<div id="addressTxt"></div>
-      </div>
-
-      <!-- Modal footer -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-
-<script>
-	var js= {};
-	$(function(){
-		js.callAddressModal = function(data){
-			console.log("callAddressModal" , data)
-			$('#addressModal').modal('show');
-			$('#addressTxt').text(data);
-		}
-					
-	});
-</script>
 <%@ include file="/include/_footermenu.jsp"%>
