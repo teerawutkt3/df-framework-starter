@@ -12,18 +12,12 @@
 			<div class="card shadow">
 			<div class="card-header"><b>Search</b></div>
 				<div class="card-body">				
-					<div class="form-group row justify-content-center">
+					<div class="form-group row justify-content-center">						
 						<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
-							<label> Name: </label>
-						</div>
+							<nested:text styleClass="form-control" property="searchCondition.name" placeholder="Name"/>							
+						</div>						
 						<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
-							<nested:text styleClass="form-control" property="searchCondition.name" />							
-						</div>
-						<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
-							<label> Address: </label>
-						</div>
-						<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
-							<nested:text styleClass="form-control" property="searchCondition.address" />							
+							<nested:text styleClass="form-control" property="searchCondition.address" placeholder="Address"/>							
 						</div>
 					</div>
 <!-- 					<div class="form-group row"> -->

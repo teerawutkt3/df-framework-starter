@@ -3,7 +3,7 @@
 <%@ include file="/include/_headermenu.jsp"%>
 
 
-<nested:form action="/top/customer">
+<nested:form action="/top/task">
 	<nested:define id="pageCode" property="pageCode" type="String" />
 	<input type="hidden" name="cmd" value="" />
 	<input type="hidden" name="data_index" value="" />
@@ -14,16 +14,10 @@
 				<div class="card-body">				
 					<div class="form-group row justify-content-center">
 						<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
-							<label> Name: </label>
-						</div>
+							<nested:text styleClass="form-control" property="searchCondition.title" placeholder="Title"/>							
+						</div>				
 						<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
-							<nested:text styleClass="form-control" property="searchCondition.name" />							
-						</div>
-						<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
-							<label> Address: </label>
-						</div>
-						<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
-							<nested:text styleClass="form-control" property="searchCondition.address" />							
+							<nested:text styleClass="form-control" property="searchCondition.description" placeholder="Description" />							
 						</div>
 					</div>
 <!-- 					<div class="form-group row"> -->
@@ -62,9 +56,9 @@
 						<thead>
 							<tr>
 								<th class="text-center">#</th>
-								<th class="text-center">Code</th>
-								<th>Name</th>
-								<th>Address</th>
+								<th>Title</th>
+								<th>Description</th>
+								<th>Project</th>
 								<th class="text-center">Create Date</th>
 								<th class="text-right"></th>
 							</tr>
@@ -74,9 +68,9 @@
 								<tr class="tr<%= ind.intValue()%2 %>">
 									
 									<td class="text-center"><%= ind.intValue()+1 %></td>
-									<td class="text-center"><nested:write name="result" property="code" /></td>
-									<td><nested:write name="result" property="name" /></td>
-									<td><nested:write name="result" property="address" /></td>
+									<td><nested:write name="result" property="title" /></td>
+									<td><nested:write name="result" property="description" /></td>
+									<td>Project</td>
 									<td class="text-center"><nested:write name="result" property="createdDateStr" /></td>
 									<td class="text-right">
 										<a class="btn btn-info btn-sm" title="ดูข้อมูล" href="javascript:doCmd('goView', <%= ind %>)"><i class="fa fa-eye"></i></a>

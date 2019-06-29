@@ -5,7 +5,7 @@
 
 <%@ include file="/include/_headermenu.jsp"%>
 
-<nested:form action="/top/customer">
+<nested:form action="/top/task">
 <nested:define id="pageCode" property="pageCode" type="String" />
 <nested:define id="editable" property="editable" type="Boolean" />
 <input type="hidden" name="cmd" value="" />
@@ -13,33 +13,26 @@
 <div class="row">
 	<div class="col-md-12">
 		<div class="card">
-			<div class="card-header"><b><nested:write property="formModeStr" /> Customer</b></div>
+			<div class="card-header"><b><nested:write property="formModeStr" /> Task</b></div>
 			<div class="card-body">
 			
 				<div class="row form-group">
 					<div class="col-sm-2 text-right">
-						<label> Code: </label>
+						<label> Tile: </label>
 					</div>
 					<div class="col-sm-3">
-						<nested:text styleClass="form-control" property="formData.code" lang="property['code',required,,]" disabled="<%= !editable.booleanValue() %>" />						
+						<nested:text styleClass="form-control" property="formData.title" lang="property['title',required,,]" disabled="<%= !editable.booleanValue() %>" />						
 					</div>					
 				</div>
 				<div class="row form-group">					
 					<div class="col-sm-2 text-right">
-						<label> Name: </label>
+						<label> Description: </label>
 					</div>
 					<div class="col-sm-3">
-						<nested:text styleClass="form-control" property="formData.name" lang="property['code',required,,]" disabled="<%= !editable.booleanValue() %>" />
+						<nested:text styleClass="form-control" property="formData.description" lang="property['description',required,,]" disabled="<%= !editable.booleanValue() %>" />
 					</div>
 				</div>
-				<div class="row form-group">
-					<div class="col-sm-2 text-right">
-						<label> Address: </label>
-					</div>
-					<div class="col-sm-5">
-						<nested:textarea styleClass="form-control" property="formData.address" lang="property['code',required,,]" disabled="<%= !editable.booleanValue() %>" />						
-					</div>					
-				</div>
+				
 				<div class="row mt-5">
 					<div class="col-sm-2"></div>
 					<div class="col-sm-10">

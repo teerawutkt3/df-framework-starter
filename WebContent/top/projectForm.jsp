@@ -5,7 +5,7 @@
 
 <%@ include file="/include/_headermenu.jsp"%>
 
-<nested:form action="/top/customer">
+<nested:form action="/top/project">
 <nested:define id="pageCode" property="pageCode" type="String" />
 <nested:define id="editable" property="editable" type="Boolean" />
 <input type="hidden" name="cmd" value="" />
@@ -15,18 +15,10 @@
 		<div class="card">
 			<div class="card-header"><b><nested:write property="formModeStr" /> Customer</b></div>
 			<div class="card-body">
-			
-				<div class="row form-group">
-					<div class="col-sm-2 text-right">
-						<label> Code: </label>
-					</div>
-					<div class="col-sm-3">
-						<nested:text styleClass="form-control" property="formData.code" lang="property['code',required,,]" disabled="<%= !editable.booleanValue() %>" />						
-					</div>					
-				</div>
+							
 				<div class="row form-group">					
 					<div class="col-sm-2 text-right">
-						<label> Name: </label>
+						<label> Project Name: </label>
 					</div>
 					<div class="col-sm-3">
 						<nested:text styleClass="form-control" property="formData.name" lang="property['code',required,,]" disabled="<%= !editable.booleanValue() %>" />
@@ -34,10 +26,10 @@
 				</div>
 				<div class="row form-group">
 					<div class="col-sm-2 text-right">
-						<label> Address: </label>
+						<label> Budget: </label>
 					</div>
 					<div class="col-sm-5">
-						<nested:textarea styleClass="form-control" property="formData.address" lang="property['code',required,,]" disabled="<%= !editable.booleanValue() %>" />						
+						<nested:text styleClass="form-control" property="formData.budget" lang="property['code',required,,]" disabled="<%= !editable.booleanValue() %>" />						
 					</div>					
 				</div>
 				<div class="row mt-5">

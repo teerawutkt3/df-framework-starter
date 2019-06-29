@@ -7,7 +7,7 @@
 	<!-- Form Beans -->
 	<form-beans>
 		<form-bean name="TOP001" type="com.depthfirst.project.web.top.strust.CustomerForm" />
-		<form-bean name="TOP002" type="com.depthfirst.framework.struts.BaseForm" />
+		<form-bean name="TOP002" type="com.depthfirst.project.web.top.strust.ProjectForm" />
 		<form-bean name="TOP003" type="com.depthfirst.framework.struts.BaseForm" />
 	</form-beans>
 

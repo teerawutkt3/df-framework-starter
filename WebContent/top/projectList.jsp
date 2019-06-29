@@ -3,7 +3,7 @@
 <%@ include file="/include/_headermenu.jsp"%>
 
 
-<nested:form action="/top/customer">
+<nested:form action="/top/project">
 	<nested:define id="pageCode" property="pageCode" type="String" />
 	<input type="hidden" name="cmd" value="" />
 	<input type="hidden" name="data_index" value="" />
@@ -12,18 +12,12 @@
 			<div class="card shadow">
 			<div class="card-header"><b>Search</b></div>
 				<div class="card-body">				
-					<div class="form-group row justify-content-center">
+					<div class="form-group row justify-content-center">						
 						<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
-							<label> Name: </label>
-						</div>
+							<nested:text styleClass="form-control" property="searchCondition.name" placeholder="Project Name" />							
+						</div>						
 						<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
-							<nested:text styleClass="form-control" property="searchCondition.name" />							
-						</div>
-						<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
-							<label> Address: </label>
-						</div>
-						<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
-							<nested:text styleClass="form-control" property="searchCondition.address" />							
+							<nested:text styleClass="form-control" property="searchCondition.budgetStr" placeholder="Budget"  />							
 						</div>
 					</div>
 <!-- 					<div class="form-group row"> -->
@@ -64,7 +58,8 @@
 								<th class="text-center">#</th>
 								<th class="text-center">Code</th>
 								<th>Name</th>
-								<th>Address</th>
+								<th>Budget</th>
+								<th>Customer</th>
 								<th class="text-center">Create Date</th>
 								<th class="text-right"></th>
 							</tr>
@@ -76,7 +71,8 @@
 									<td class="text-center"><%= ind.intValue()+1 %></td>
 									<td class="text-center"><nested:write name="result" property="code" /></td>
 									<td><nested:write name="result" property="name" /></td>
-									<td><nested:write name="result" property="address" /></td>
+									<td><nested:write name="result" property="budget" /></td>
+									<td><button type="button" class="btn btn-sm btn-primary">Customer</button></td>
 									<td class="text-center"><nested:write name="result" property="createdDateStr" /></td>
 									<td class="text-right">
 										<a class="btn btn-info btn-sm" title="ดูข้อมูล" href="javascript:doCmd('goView', <%= ind %>)"><i class="fa fa-eye"></i></a>

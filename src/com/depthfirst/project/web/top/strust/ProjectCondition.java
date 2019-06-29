@@ -10,6 +10,7 @@ public class ProjectCondition extends SearchCondition {
 	private Customer customer;
 	private String name;
 	private Double budget;
+	private String budgetStr;
 	private boolean isActive = false;
 
 	public String getCode() {
@@ -36,6 +37,10 @@ public class ProjectCondition extends SearchCondition {
 		this.name = name;
 	}
 
+	public String getNameLikeField() {
+		return "name";
+	}
+
 	public Double getBudget() {
 		return budget;
 	}
@@ -44,6 +49,22 @@ public class ProjectCondition extends SearchCondition {
 		this.budget = budget;
 	}
 
+	public String getBudgetLikeField() {
+		return "budget";
+	}
+
+	public String getBudgetStr() {
+		return budgetStr;
+	}
+
+	public void setBudgetStr(String budgetStr) {
+		this.budgetStr = budgetStr;
+	}
+
+	public String getBudgetStrHql() {
+		return "o.budget = to_number(?)";
+	}
+	
 	public boolean isActive() {
 		return isActive;
 	}

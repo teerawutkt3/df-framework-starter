@@ -18,9 +18,18 @@ public class TaskCondition extends SearchCondition {
 		this.title = title;
 	}
 
+	public String getTitleLikeField() {
+		return "title";
+	}
+
 	public String getDescription() {
 		return description;
 	}
+	
+	public String getDescriptionLikeField() {
+		return "description";
+	}
+
 
 	public void setDescription(String description) {
 		this.description = description;
