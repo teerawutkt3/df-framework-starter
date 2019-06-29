@@ -20,12 +20,12 @@
 
 	<!-- Action Mappings -->
 	<action-mappings>
-		<action type="com.depthfirst.project.web.top.strust.TopAction"
+		<action type="com.depthfirst.project.web.top.strust.CustomerAction"
 				className="com.depthfirst.framework.struts.BaseDomainActionMapping"
 				path="/top/customer" name="TOP001" scope="session" validate="false" parameter="cmd">
-			<set-property property="serviceName" value="com.depthfirst.project.web.top.serivce.TopService" />
+			<set-property property="serviceName" value="BaseDomainService" />
 			<set-property property="baseDomainClassName" value="com.depthfirst.project.web.top.domian.Customer" />
-			<set-property property="searchConditionClassName" value="com.depthfirst.project.web.top.strust.TopSearchCondition" />
+			<set-property property="searchConditionClassName" value="com.depthfirst.project.web.top.strust.CostomerCondition" />
 <!-- 			<set-property property="defaultOrderBy" value="o.module.order,o.pageType.order,o.order,o.code" /> -->
 			<forward name="form" path="/top/customerForm.jsp" />
 			<forward name="list" path="/top/customerList.jsp" />
