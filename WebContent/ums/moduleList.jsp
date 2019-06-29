@@ -25,7 +25,7 @@
 						<tr class="tr<%= ind.intValue()%2 %>">
 							<td align="right" nowrap="nowrap">&nbsp;<%= ind.intValue()+searchCondition.getPosition()+1 %>&nbsp;</td>
 							<td align="right">&nbsp;<nested:write name="result" property="order" />&nbsp;</td>
-							<td><i class="fa fa-<nested:write name="result" property="code" />" aria-hidden="true"></i></td>
+							<td><nested:write name="result" property="code" /></td>
 							<td><nested:write name="result" property="name" /></td>
 							<td align="center" nowrap="nowrap">
 								&nbsp;<a class="btn btn-info btn-xs" title="ดูข้อมูล" href="javascript:doCmd('goView', <%= ind %>)"><i class="fa fa-search" aria-hidden="true"></i></a>&nbsp;

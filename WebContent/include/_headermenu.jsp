@@ -24,7 +24,11 @@ com.depthfirst.framework.ums.web.UserSession userSession =
 <link rel="stylesheet" href="<%= request.getContextPath() %>/assets/lib/bootstrap4/bootstrap.min.css" />
 <link rel="stylesheet" href="<%= request.getContextPath() %>/assets/lib/fontawesome-4.7.0/css/font-awesome.min.css" />
 <link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/siteBarMenu.css" />
+<script type="text/javascript">
 
+var ctxPath = "<%= request.getContextPath() %>";
+
+</script >
 <!-- jQuery library -->
 <script src="<%= request.getContextPath() %>/assets/lib/jquery/jquery.min.js"></script>
 
@@ -35,12 +39,17 @@ com.depthfirst.framework.ums.web.UserSession userSession =
 <script src="<%= request.getContextPath() %>/assets/lib/bootstrap4/bootstrap.min.js"></script>
 <!-- theme bootstrap end-->
 
-<script language="JavaScript">
-<!--
-var ctxPath = "<%= ctxPath %>
-	";
-// -->
-</script>
+<!-- js framework -->
+<script src="<%= request.getContextPath() %>/assets/js/win.js"></script>
+<script src="<%= request.getContextPath() %>/assets/js/util.js"></script>
+<script src="<%= request.getContextPath() %>/assets/js/struts.js"></script> 
+<script src="<%= request.getContextPath() %>/assets/js/validateDate.js"></script>
+<script src="<%= request.getContextPath() %>/assets/js/validateForm.js"></script>
+<script src="<%= request.getContextPath() %>/assets/js/validateNumber.js"></script>
+<script src="<%= request.getContextPath() %>/assets/js/validatePsnId.js"></script>
+<script src="<%= request.getContextPath() %>/assets/js/Style.js"></script> 
+
+
 
 </head>
 
@@ -68,28 +77,28 @@ var ctxPath = "<%= ctxPath %>
 							<_nested:define name="<%= com.depthfirst.framework.ums.web.UserSession.SESSION_KEY %>" id="currentPage" property="currentPage" type="com.depthfirst.framework.ums.web.PageInfo" />
 							<_nested:define property="code" id="moduleCode" type="String" />
 							<li class="">
-							<a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+							<a href="#mainMenu<%= mainInd.intValue() %>" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">
 							 <i class="fa fa-folder-o"></i> 
 							 <span><_nested:write property="name" /></span> 
 							 <span class="pull-right-container"> <!-- <i class="fa fa-angle-left pull-right"></i> --></span>
 							</a>
 
-								<ul class="collapse list-unstyled show" id="homeSubmenu">
+								<ul class="collapse list-unstyled <%= currentPage!=null&&moduleCode.equals(currentPage.getModuleCode())?"show":"" %>" id="mainMenu<%= mainInd.intValue() %>">
 									<_nested:iterate id="subItem" name="mainItem" indexId="subInd" property="subItemList">
 										<_nested:define property="name" id="moduleCode2" type="String" />
 										<_nested:iterate id="menuItem" name="subItem" indexId="menuInd" property="subItemList">
 										</_nested:iterate>
 										<li class="treeview <%= currentPage!=null&&moduleCode2.equals(currentPage.getPageType())?" menu-open":"" %>">
 										<a href="#homeSubmenu<%= subInd.intValue() %>" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> 
-										<i class="fa fa-circle-thin"></i> <_nested:write property="name" /> <span class="pull-right-container"> <!-- <i class="fa fa-angle-left pull-right"></i> -->
+										<i class="fa fa-minus-square-o"></i> <_nested:write property="name" /> <span class="pull-right-container"> <!-- <i class="fa fa-angle-left pull-right"></i> -->
 											</span>
 										</a>
-											<ul class="collapse list-unstyled show" id="homeSubmenu<%= subInd.intValue() %>">
+											<ul class="collapse list-unstyled <%= currentPage!=null&&moduleCode2.equals(currentPage.getPageType())?"show":"" %>" id="homeSubmenu<%= subInd.intValue() %>">
 												<_nested:iterate id="menuItem" name="subItem" indexId="menuInd" property="subItemList">
 													<_nested:define property="code" id="moduleCode3" type="String" />
 													<li <%= currentPage!=null&&moduleCode3.equals(currentPage.getPageCode())?" class='active'":"" %>>
 													<a data-toggle="tooltip" data-placement="right" title="<_nested:write property="name" />" href="<%= request.getContextPath() %><_nested:write property="path" />?random=<%= random %>">
-														&nbsp;&nbsp;&nbsp;<i class="fa fa-minus"></i> <_nested:write property="name" />
+														&nbsp;&nbsp;&nbsp;<i class="fa fa-circle-thin"></i> <_nested:write property="name" />
 													</a></li>
 												</_nested:iterate>
 											</ul></li>
@@ -113,9 +122,12 @@ var ctxPath = "<%= ctxPath %>
 									<li class="nav-item"><a class="nav-link" href="#">Dashboard2</a></li>
 									<li class="nav-item"><a class="nav-link" href="#">Page</a></li>
 									<li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign in</a></li>
-									<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> User </a>
+									<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false"> User </a>
 										<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-											<a class="dropdown-item" href="#">Action</a> <a class="dropdown-item" href="#">Another action</a> <a href="javascript:doLogout();" data-toggle="modal" data-target="#logoutModal" class="dropdown-item" href="#">Logout</a>
+											<a class="dropdown-item" href="#">Action</a> 
+											<a class="dropdown-item" href="#">Another action</a> 
+											<a href="javascript:doLogout();" data-toggle="modal" data-target="#logoutModal" class="dropdown-item" href="#">Logout</a>
 										</div>
 									</li>
 								</ul>
