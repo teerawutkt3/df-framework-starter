@@ -127,7 +127,7 @@
 				/WEB-INF/knn-struts-config.xml,
 				/WEB-INF/ert-struts-config.xml,
 				/WEB-INF/arm-struts-config.xml,
-				/WEB-INF/top-struts-config.xml,
+				/WEB-INF/top-struts-config.xml,				
 				/WEB-INF/poom-struts-config.xml
 			</param-value>
 		</init-param>
