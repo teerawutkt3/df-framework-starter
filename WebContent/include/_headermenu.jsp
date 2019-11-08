@@ -24,6 +24,10 @@ com.depthfirst.framework.ums.web.UserSession userSession =
 <link rel="stylesheet" href="<%= request.getContextPath() %>/assets/lib/bootstrap4/bootstrap.min.css" />
 <link rel="stylesheet" href="<%= request.getContextPath() %>/assets/lib/fontawesome-4.7.0/css/font-awesome.min.css" />
 <link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/siteBarMenu.css" />
+
+<!-- font -->
+<link href="<%= request.getContextPath() %>/assets/font/fonts.css" rel="stylesheet">
+
 <script type="text/javascript">
 
 var ctxPath = "<%= request.getContextPath() %>";
@@ -60,16 +64,21 @@ var ctxPath = "<%= request.getContextPath() %>";
 		<nav id="sidebar" class="shadow">
 			<div class="sidebar-header">
 				<!-- <h3>Bootstrap</h3> -->
-				<img class="logo" src="<%= request.getContextPath() %>/assets/images/df_logo.png" alt="logo" style="margin-left: 90px; width: 45px;">
+<!-- 				<h3 class="text-center"> -->
+				<div class="text-center">
+					<img class="logo" src="<%= request.getContextPath() %>/assets/images/df_logo.png" alt="logo" style="width: 44px;">
+						 DF Framework
+				</div>
+<!-- 				</h3> -->
 			</div>
 
 			<ul class="list-unstyled components">
-				<h3 class="text-center">
-					DF Framework
-				</h3>
-				<li><a href="index.html"> <i class="fa fa-tachometer"></i> Dashboard
+<!-- 				<h3 class="text-center"> -->
+<!-- 					DF Framework -->
+<!-- 				</h3> -->
+				<li><a href="#"> <i class="fa fa-tachometer"></i> Dashboard
 				</a></li>
-				<li><a href="dashboard2.html"> <i class="fa fa-tachometer"></i> Dashboard2
+				<li><a href="#"> <i class="fa fa-tachometer"></i> Dashboard2
 				</a></li>
 				<_nested:root name="<%= com.depthfirst.framework.ums.web.UserSession.SESSION_KEY %>">
 					<_nested:notEmpty property="menuItems">
@@ -120,11 +129,11 @@ var ctxPath = "<%= request.getContextPath() %>";
 								<ul class="nav navbar-nav ml-auto">
 									<li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
 									<li class="nav-item"><a class="nav-link" href="#">Dashboard2</a></li>
-									<li class="nav-item"><a class="nav-link" href="#">Page</a></li>
-									<li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign in</a></li>
+<!-- 									<li class="nav-item"><a class="nav-link" href="#">Page</a></li> -->
+<!-- 									<li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign in</a></li> -->
 									<li class="nav-item dropdown">
-									<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false"> User </a>
-										<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+									<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-user-o" aria-hidden="true"></i> User </a>
+										<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="margin-left: -94px !important;">
 											<a class="dropdown-item" href="#">Action</a> 
 											<a class="dropdown-item" href="#">Another action</a> 
 											<a href="javascript:doLogout();" data-toggle="modal" data-target="#logoutModal" class="dropdown-item" href="#">Logout</a>
