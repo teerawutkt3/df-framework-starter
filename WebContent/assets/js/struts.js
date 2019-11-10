@@ -3,7 +3,7 @@ function getForm() {
 }
 function doCmd(cmd, index) {
 	if(cmd=='doSave' && !validateForm(getForm())) return;
-	if(cmd=='doDelete' && !confirm('¬◊π¬—π°“√≈∫¢ÈÕ¡Ÿ≈')) return;
+	if(cmd=='doDelete' && !confirm('‡∏¢‡∏∑‡∏ô‡∏¢‡∏±‡∏ô‡∏Å‡∏≤‡∏£‡∏•‡∏ö‡∏Ç‡πâ‡∏≠‡∏°‡∏π‡∏•')) return;
 	var form = getForm();
 	form.elements['cmd'].value = cmd;
 	if(index != null) form.elements['data_index'].value = index;
