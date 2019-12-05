@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="/WEB-INF/tld/struts-nested.tld" prefix="nested"%>
 
-<%@ include file="/include/_headermenu.jsp" %>
+<%@ include file="/include/_headermenu_mdb.jsp" %>
 
 <%@page import="com.depthfirst.framework.ums.web.UserSession"%>
 <script language="JavaScript">
@@ -138,4 +138,4 @@ initCheckRightAll();
 // -->
 </script>
 
-<%@ include file="/include/_footermenu.jsp" %>
+<%@ include file="/include/_footermenu_mdb.jsp" %>

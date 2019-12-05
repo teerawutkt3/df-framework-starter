@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="/WEB-INF/tld/struts-nested.tld" prefix="nested"%>
-<%@ include file="/include/_headermenu.jsp"%>
+<%@ include file="/include/_headermenu_mdb.jsp"%>
 
 
 <nested:form action="/top/project">
@@ -89,4 +89,4 @@
 		</div>
 	</div>
 </nested:form>
-<%@ include file="/include/_footermenu.jsp"%>
+<%@ include file="/include/_footermenu_mdb.jsp"%>

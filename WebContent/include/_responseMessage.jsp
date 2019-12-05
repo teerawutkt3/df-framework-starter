@@ -7,23 +7,23 @@ if(msg != null) { %><script language="JavaScript">
 			position: 'top center'
 		}); --%>
 		
-		swal.fire({
-			position: 'center',
-			type: 'success',
-			title: '<%= msg %>',
-			showConfirmButton: false,
-			timer: 1500
-		})
+// 		swal.fire({
+// 			position: 'center',
+// 			type: 'success',
+<%-- 			title: '<%= msg %>', --%>
+// 			showConfirmButton: false,
+// 			timer: 1500
+// 		})
 	}else{
 		<%-- alert("<%= msg %>"); --%>
-		$.jAlert({
-		  'title': 'Notification',
-		  'clickAnywhere': true,
-		  'content': '<%= msg %>',
-		  'theme': '<%= color %>',
-		  'size': 'sm',
-		  'showAnimation': 'fadeInUp',
-		  'hideAnimation': 'fadeOutDown'
-		});
+// 		$.jAlert({
+// 		  'title': 'Notification',
+// 		  'clickAnywhere': true,
+<%-- 		  'content': '<%= msg %>', --%>
+<%-- 		  'theme': '<%= color %>', --%>
+// 		  'size': 'sm',
+// 		  'showAnimation': 'fadeInUp',
+// 		  'hideAnimation': 'fadeOutDown'
+// 		});
 	}
 </script><% } %>

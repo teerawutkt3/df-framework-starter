@@ -1,0 +1,24 @@
+.datepicker [class^="icon-"], [class*=" icon-"] {
+    display: inline-block;
+    font-family: "Font Awesome 5 Pro";
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.datepicker .prev [class^="icon-"]:before {
+    content: "\f04a";
+    font-style: normal;
+}
+
+.datepicker .next [class^="icon-"]:before {
+    content: "\f04e";
+    font-style: normal;
+}
+.datepicker .table-condensed{
+	width: 100%;
+}
+.datepicker-dropdown:before,
+.datepicker-dropdown:after{
+	display: none;
+}

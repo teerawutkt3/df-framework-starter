@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="/WEB-INF/tld/struts-nested.tld" prefix="nested"%>
 
-<%@ include file="/include/_headermenu.jsp" %>
+<%@ include file="/include/_headermenu_mdb.jsp" %>
 
 <nested:form action="<%= (String)request.getAttribute(com.depthfirst.framework.struts.BaseAction.ACTION_PATH) %>">
 <nested:define id="pageCode" property="pageCode" type="String" />
@@ -55,4 +55,4 @@
 
 </nested:form>
 
-<%@ include file="/include/_footermenu.jsp" %>
+<%@ include file="/include/_footermenu_mdb.jsp" %>

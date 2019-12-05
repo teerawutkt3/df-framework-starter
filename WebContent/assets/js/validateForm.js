@@ -145,18 +145,18 @@ function validateText(val, argStr, elName) {
 	var emsg = "";
 	if(val != '') {
 		var minlen = parseInt(args[2], 10);
-		if(!isNaN(minlen) && val.length<minlen) emsg += (emsg!=""?", ":"")+"¢ÈÕ¡Ÿ≈µÈÕß¬“«‰¡ËπÈÕ¬°«Ë“ "+minlen+" µ—«Õ—°…√";
+		if(!isNaN(minlen) && val.length<minlen) emsg += (emsg!=""?", ":"")+"‡∏Ç‡πâ‡∏≠‡∏°‡∏π‡∏•‡∏ï‡πâ‡∏≠‡∏á‡∏¢‡∏≤‡∏ß‡πÑ‡∏°‡πà‡∏ô‡πâ‡∏≠‡∏¢‡∏Å‡∏ß‡πà‡∏≤ "+minlen+" ‡∏ï‡∏±‡∏ß‡∏≠‡∏±‡∏Å‡∏©‡∏£";
 
 		var maxlen = parseInt(args[3], 10);
-		if(!isNaN(maxlen) && val.length>maxlen) emsg += (emsg!=""?", ":"")+"¢ÈÕ¡Ÿ≈µÈÕß¬“«‰¡Ë‡°‘π "+maxlen+" µ—«Õ—°…√";
+		if(!isNaN(maxlen) && val.length>maxlen) emsg += (emsg!=""?", ":"")+"‡∏Ç‡πâ‡∏≠‡∏°‡∏π‡∏•‡∏ï‡πâ‡∏≠‡∏á‡∏¢‡∏≤‡∏ß‡πÑ‡∏°‡πà‡πÄ‡∏Å‡∏¥‡∏ô "+maxlen+" ‡∏ï‡∏±‡∏ß‡∏≠‡∏±‡∏Å‡∏©‡∏£";
 
 		var femsg = validateFunction(val, args, 4, elName);
 		if(femsg != null) emsg += (emsg!=""?", ":"")+femsg;
 	}else {
 		if(args[1] != 'required') {
 			var minlen = parseInt(args[2], 10);
-			if(!isNaN(minlen)) emsg += (emsg!=""?", ":"")+"¢ÈÕ¡Ÿ≈µÈÕß¬“«‰¡ËπÈÕ¬°«Ë“ "+minlen+" µ—«Õ—°…√";
-		}else emsg += "°√ÿ≥“°√Õ°¢ÈÕ¡Ÿ≈";
+			if(!isNaN(minlen)) emsg += (emsg!=""?", ":"")+"‡∏Ç‡πâ‡∏≠‡∏°‡∏π‡∏•‡∏ï‡πâ‡∏≠‡∏á‡∏¢‡∏≤‡∏ß‡πÑ‡∏°‡πà‡∏ô‡πâ‡∏≠‡∏¢‡∏Å‡∏ß‡πà‡∏≤ "+minlen+" ‡∏ï‡∏±‡∏ß‡∏≠‡∏±‡∏Å‡∏©‡∏£";
+		}else emsg += "‡∏Å‡∏£‡∏∏‡∏ì‡∏≤‡∏Å‡∏£‡∏≠‡∏Å‡∏Ç‡πâ‡∏≠‡∏°‡∏π‡∏•";
 	}
 	return emsg!=""?(__emsg_with_name?"\""+args[0]+"\" ":"")+emsg:null;
 }
@@ -180,7 +180,7 @@ function validateRadio(radios, argStr) {
 	for(var i=0; i<radios.length; i++) if(radios[i].checked) val = radios[i].value;
 
 	var emsg = "";
-	if(val==null && args[1]=='required') emsg += "°√ÿ≥“‡≈◊Õ°";
+	if(val==null && args[1]=='required') emsg += "‡∏Å‡∏£‡∏∏‡∏ì‡∏≤‡πÄ‡∏•‡∏∑‡∏≠‡∏Å";
 
 	var femsg = validateFunction(val, args, 2, radios[0].name);
 	if(femsg != null) emsg += (emsg!=""?", ":"")+femsg;
@@ -207,15 +207,15 @@ function validateSelect(select, argStr) {
 	if(val != null) {
 		var sel = val.split(__default_separator);
 		var minsel = parseInt(args[2], 10);
-		if(!isNaN(minsel) && sel<minsel) emsg += (emsg!=""?", ":"")+"µÈÕß‡≈◊Õ°¢ÈÕ¡Ÿ≈‰¡ËπÈÕ¬°«Ë“ "+minsel;
+		if(!isNaN(minsel) && sel<minsel) emsg += (emsg!=""?", ":"")+"‡∏ï‡πâ‡∏≠‡∏á‡πÄ‡∏•‡∏∑‡∏≠‡∏Å‡∏Ç‡πâ‡∏≠‡∏°‡∏π‡∏•‡πÑ‡∏°‡πà‡∏ô‡πâ‡∏≠‡∏¢‡∏Å‡∏ß‡πà‡∏≤ "+minsel;
 
 		var maxsel = parseInt(args[3], 10);
-		if(!isNaN(maxsel) && sel>maxsel) emsg += (emsg!=""?", ":"")+"‡≈◊Õ°¢ÈÕ¡Ÿ≈‰¥È‰¡Ë‡°‘π "+maxsel;
+		if(!isNaN(maxsel) && sel>maxsel) emsg += (emsg!=""?", ":"")+"‡πÄ‡∏•‡∏∑‡∏≠‡∏Å‡∏Ç‡πâ‡∏≠‡∏°‡∏π‡∏•‡πÑ‡∏î‡πâ‡πÑ‡∏°‡πà‡πÄ‡∏Å‡∏¥‡∏ô "+maxsel;
 	}else {
 		if(args[1]!='required') {
 			var minsel = parseInt(args[2], 10);
-			if(!isNaN(minsel)) emsg += (emsg!=""?", ":"")+"µÈÕß‡≈◊Õ°¢ÈÕ¡Ÿ≈‰¡ËπÈÕ¬°«Ë“ "+minsel;
-		}else emsg += "°√ÿ≥“‡≈◊Õ°";
+			if(!isNaN(minsel)) emsg += (emsg!=""?", ":"")+"‡∏ï‡πâ‡∏≠‡∏á‡πÄ‡∏•‡∏∑‡∏≠‡∏Å‡∏Ç‡πâ‡∏≠‡∏°‡∏π‡∏•‡πÑ‡∏°‡πà‡∏ô‡πâ‡∏≠‡∏¢‡∏Å‡∏ß‡πà‡∏≤ "+minsel;
+		}else emsg += "‡∏Å‡∏£‡∏∏‡∏ì‡∏≤‡πÄ‡∏•‡∏∑‡∏≠‡∏Å";
 	}
 
 	var femsg = validateFunction(val, args, 4, select.name);
@@ -242,7 +242,7 @@ function validateCheckBox(checkboxs, argStr) {
 	}
 
 	var emsg = "";
-	if(val==null && args[1]=='required') emsg += "°√ÿ≥“‡≈◊Õ°";
+	if(val==null && args[1]=='required') emsg += "‡∏Å‡∏£‡∏∏‡∏ì‡∏≤‡πÄ‡∏•‡∏∑‡∏≠‡∏Å";
 
 	var femsg = validateFunction(val, args, 2, checkboxs[0].name);
 	if(femsg != null) emsg += (emsg!=""?", ":"")+femsg;
@@ -291,7 +291,7 @@ function setRandomPassword(form) {
 var _passwordChars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+=-[]:;/<>.,?{} ";
 function isPasswordChars(val) {
   for(var i=0; i<val.length; i++)
-    if(_passwordChars.indexOf(val.charAt(i)) < 0) return "√À— ºË“π‰¡Ë∂Ÿ°µÈÕß";
+    if(_passwordChars.indexOf(val.charAt(i)) < 0) return "‡∏£‡∏´‡∏±‡∏™‡∏ú‡πà‡∏≤‡∏ô‡πÑ‡∏°‡πà‡∏ñ‡∏π‡∏Å‡∏ï‡πâ‡∏≠‡∏á";
   return null;
 }
 function isConfirmPassword(val) {
@@ -299,9 +299,9 @@ function isConfirmPassword(val) {
 
   var form = getForm();
   var p1 = form.elements['password1'];
-  if(p1!=null && val!=p1.value) emsg = (emsg!=null?emsg+", ":"")+"¬◊π¬—π√À— ºË“π‰¡Ëµ√ß°—π";
+  if(p1!=null && val!=p1.value) emsg = (emsg!=null?emsg+", ":"")+"‡∏¢‡∏∑‡∏ô‡∏¢‡∏±‡∏ô‡∏£‡∏´‡∏±‡∏™‡∏ú‡πà‡∏≤‡∏ô‡πÑ‡∏°‡πà‡∏ï‡∏£‡∏á‡∏Å‡∏±‡∏ô";
   var p0 = form.elements['password0'];
-  if(p0!=null && val==p0.value) emsg = (emsg!=null?emsg+", ":"")+"√À— ºË“π„À¡Ëµ√ß°—∫√À— ºË“π‡¥‘¡";
+  if(p0!=null && val==p0.value) emsg = (emsg!=null?emsg+", ":"")+"‡∏£‡∏´‡∏±‡∏™‡∏ú‡πà‡∏≤‡∏ô‡πÉ‡∏´‡∏°‡πà‡∏ï‡∏£‡∏á‡∏Å‡∏±‡∏ö‡∏£‡∏´‡∏±‡∏™‡∏ú‡πà‡∏≤‡∏ô‡πÄ‡∏î‡∏¥‡∏°";
 
   return emsg;
 }
@@ -315,7 +315,7 @@ function isPassword2008(val) {
     for(var c=0; c<val.length; c++)
       if(_password2008[i].indexOf(val.charAt(c)) >= 0){ n++; break; }
   }
-  if(n < 3) emsg = (emsg!=null?emsg+", ":"")+"√À— ºË“π‰¡Ëª≈Õ¥¿—¬";
+  if(n < 3) emsg = (emsg!=null?emsg+", ":"")+"‡∏£‡∏´‡∏±‡∏™‡∏ú‡πà‡∏≤‡∏ô‡πÑ‡∏°‡πà‡∏õ‡∏•‡∏≠‡∏î‡∏†‡∏±‡∏¢";
 
   return emsg;
 }

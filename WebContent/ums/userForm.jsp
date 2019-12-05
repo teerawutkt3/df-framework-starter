@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="/WEB-INF/tld/struts-nested.tld" prefix="nested"%>
 
-<%@ include file="/include/_headermenu.jsp" %>
+<%@ include file="/include/_headermenu_mdb.jsp" %>
 <script language="JavaScript" src="<%= request.getContextPath() %>/dwr/interface/PpsService.js"></script>
 <script language="JavaScript" src="<%= request.getContextPath() %>/dwr/util.js"></script>
 <script language="JavaScript" src="<%= request.getContextPath() %>/dwr/engine.js"></script>
@@ -253,4 +253,4 @@ function checkToDateStatus(val) {
 </div>
 
 </nested:form>
-<%@ include file="/include/_footermenu.jsp" %>
+<%@ include file="/include/_footermenu_mdb.jsp" %>

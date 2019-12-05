@@ -91,12 +91,11 @@ var ctxPath = "<%= request.getContextPath() %>";
 							 <span><_nested:write property="name" /></span> 
 							 <span class="pull-right-container"> <!-- <i class="fa fa-angle-left pull-right"></i> --></span>
 							</a>
-
 								<ul class="collapse list-unstyled <%= currentPage!=null&&moduleCode.equals(currentPage.getModuleCode())?"show":"" %>" id="mainMenu<%= mainInd.intValue() %>">
 									<_nested:iterate id="subItem" name="mainItem" indexId="subInd" property="subItemList">
 										<_nested:define property="name" id="moduleCode2" type="String" />
-										<_nested:iterate id="menuItem" name="subItem" indexId="menuInd" property="subItemList">
-										</_nested:iterate>
+<%-- 										<_nested:iterate id="menuItem" name="subItem" indexId="menuInd" property="subItemList"> --%>
+<%-- 										</_nested:iterate> --%>
 										<li class="treeview <%= currentPage!=null&&moduleCode2.equals(currentPage.getPageType())?" menu-open":"" %>">
 										<a href="#homeSubmenu<%= subInd.intValue() %>" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> 
 										<i class="fa fa-minus-square-o"></i> <_nested:write property="name" /> <span class="pull-right-container"> <!-- <i class="fa fa-angle-left pull-right"></i> -->
@@ -112,7 +111,8 @@ var ctxPath = "<%= request.getContextPath() %>";
 												</_nested:iterate>
 											</ul></li>
 									</_nested:iterate>
-								</ul></li>
+								</ul>
+							</li>
 						</_nested:iterate>
 					</_nested:notEmpty>
 				</_nested:root>
@@ -135,9 +135,9 @@ var ctxPath = "<%= request.getContextPath() %>";
 <!-- 									<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-user-o" aria-hidden="true"></i> User </a> -->
 									<a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-user-o" aria-hidden="true"></i> User </a>
 										<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="margin-left: -94px !important;">
-											<a class="dropdown-item" href="#">Action</a> 
-											<a class="dropdown-item" href="#">Another action</a> 
-											<a href="javascript:doLogout();" data-toggle="modal" data-target="#logoutModal" class="dropdown-item" href="#">Logout</a>
+											<a class="dropdown-item" href="#"><i class="fa fa-user-circle-o" aria-hidden="true"></i>&nbsp;Profile</a> 
+											<a class="dropdown-item" href="#"><i class="fa fa-cogs" aria-hidden="true"></i>&nbsp;Setting</a> 
+											<a href="javascript:doLogout();" data-toggle="modal" data-target="#logoutModal" class="dropdown-item" href="#"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;Logout</a>
 										</div>
 									</li>
 								</ul>
@@ -154,15 +154,18 @@ var ctxPath = "<%= request.getContextPath() %>";
 							<!-- Content Header (Page header) -->
 							<section class="content-header content-hg">
 								<_nested:root name="<%= com.depthfirst.framework.ums.web.UserSession.SESSION_KEY %>">
-									<h1>
-										<_nested:present property="currentPage.moduleName">
-											<_nested:write property="currentPage.moduleName" />&nbsp;>>&nbsp;</_nested:present>
-										<_nested:write property="currentPage.pageName" />
-										</span>
-									</h1>
 									<ol class="breadcrumb">
-										<li><_nested:write property="currentPage.pageCode" /></li>
+									<li class="breadcrumb-item">
+										<a href="#">
+										<b><span class="badge badge-dark badge-pill " style="padding-top: 5px !important;"><_nested:write property="currentPage.pageCode" /></span></b>
+											<_nested:present property="currentPage.moduleName">
+												<_nested:write property="currentPage.moduleName" />
+											</_nested:present>
+										</a>
+									</li>								    
+								    <li class="breadcrumb-item active" aria-current="page"><_nested:write property="currentPage.pageName" /></li>
 									</ol>
+<%-- 										<li><_nested:write property="currentPage.pageCode" /></li> --%>
 								</_nested:root>
 							</section>
 							<%try { %>

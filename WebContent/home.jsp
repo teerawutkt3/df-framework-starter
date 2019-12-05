@@ -7,6 +7,6 @@ try {
 	}else userSession.setCurrentPage(new PageInfo("หน้าแรก"));
 }catch(Exception e){ e.printStackTrace(); }
 %><%@ taglib uri="/WEB-INF/tld/struts-nested.tld" prefix="nested"%>
-<%@ include file="/include/_headermenu.jsp" %>
+<%@ include file="/include/_headermenu_mdb.jsp" %>
 <br/><br/>
-<%@ include file="/include/_footermenu.jsp" %>
+<%@ include file="/include/_footermenu_mdb.jsp" %>

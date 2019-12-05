@@ -3,19 +3,41 @@ function getForm() {
 }
 function doCmd(cmd, index) {
 	if(cmd=='doSave' && !validateForm(getForm())) return;
-	if(cmd=='doDelete' && !confirm('ยืนยันการลบข้อมูล')) return;
+	if(cmd=='doDelete'){
+		$('#deleteModal').modal('show');
+		$('#idDeleteModal').val(index);
+		 return;
+	}
+	if(cmd=='doDeleteContinue') {
+		cmd='doDelete';
+		index = $('#idDeleteModal').val();
+		$('#deleteModal').modal('hide');
+	}
 	var form = getForm();
 	form.elements['cmd'].value = cmd;
 	if(index != null) form.elements['data_index'].value = index;
 	form.submit();
+//	headerJs.blockUi();
 }
-function doCmdA(cmd, aname, index) {
+function doCmdA(cmd, aname, index) {	
+	if(cmd=='doDelete'){
+		$('#deleteModal').modal('show');
+		$('#idDeleteModal').val(index);
+		 return;
+	}
+	if(cmd=='doDeleteContinue') {
+		cmd='doDelete';
+		index = $('#idDeleteModal').val();
+		$('#deleteModal').modal('hide');
+	}
+	
 	var form = getForm();
 	form.elements['cmd'].value = cmd;
 	if(aname == null) aname = cmd;
 	form.action += "#"+aname;
 	if(index != null) form.elements['data_index'].value = index;
 	form.submit();
+//	headerJs.blockUi();
 }
 function popupCmd(cmd, width, height, fixsize, noscrolls) {
 	var form = getForm();
@@ -28,6 +50,7 @@ function doGoto(pos) {
 		form.elements['searchCondition.position'].value = pos;
 	form.elements['cmd'].value = 'list';
 	form.submit();
+//	headerJs.blockUi();
 }
 function doSort(orderBy, orderDesc) {
 	var form = getForm();
@@ -36,6 +59,7 @@ function doSort(orderBy, orderDesc) {
 	form.elements['searchCondition.position'].value = 0;
 	form.elements['cmd'].value = 'list';
 	form.submit();
+//	headerJs.blockUi();
 }
 
 function getNameIndex(name) {
