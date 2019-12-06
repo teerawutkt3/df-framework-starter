@@ -7,6 +7,11 @@
 <input type="hidden" name="cmd" value="" />
 <input type="hidden" name="data_index" value="" />
 <div class="row">
+	<div class="col-md-12 text-right mb-3">
+	<button class="btn btn-success btn-sm" onclick="doCmd('goCreate')"  type="button" ><i class="ti-plus"></i>&nbsp;เพิ่มข้อมูลระบบงาน</button>
+	</div>
+</div>
+<div class="row">
 	<div class="col-md-12">
 		<div class="box box-primary">
 <!-- 			<div class="box-header with-border"><h3 class="box-title">ค้นหาข้อมูล</h3> </div> -->
@@ -28,9 +33,11 @@
 							<td><nested:write name="result" property="code" /></td>
 							<td><nested:write name="result" property="name" /></td>
 							<td align="center" nowrap="nowrap">
-								&nbsp;<a class="btn btn-info btn-sm" title="ดูข้อมูล" href="javascript:doCmd('goView', <%= ind %>)"><i class="fa fa-search" aria-hidden="true"></i></a>&nbsp;
-								<nested:equal name="<%= pageCode %>" property="canUpdate" value="true">&nbsp;<a title="แก้ไข" class="btn btn-warning btn-sm" href="javascript:doCmd('goUpdate', <%= ind %>)"><i class="fa fa-edit" aria-hidden="true"></i></a>&nbsp;</nested:equal>
-								<nested:equal name="<%= pageCode %>" property="canDelete" value="true">&nbsp;<a title="ลบข้อมูล" class="btn btn-danger btn-sm" href="javascript:doCmd('doDelete', <%= ind %>)"><i class="fa fa-trash" aria-hidden="true"></i></a>&nbsp;</nested:equal>
+								<a class="btn btn-icon btn-outline-info btn-info" title="ดูข้อมูล" href="javascript:doCmd('goView', <%= ind %>)"><i class="ti-search"></i></a>
+								<nested:equal name="<%= pageCode %>" property="canUpdate" value="true">
+								<a title="แก้ไข" class="btn btn-warning btn-outline-warning btn-icon" href="javascript:doCmd('goUpdate', <%= ind %>)"><i class="ti-pencil-alt"></i></a></nested:equal>
+								<nested:equal name="<%= pageCode %>" property="canDelete" value="true">
+								<a title="ลบข้อมูล" class="btn btn-danger btn-outline-danger btn-icon" href="javascript:doCmd('doDelete', <%= ind %>)"><i class="ti-trash"></i></a></nested:equal>								
 							</td>
 						</tr>
 					</nested:iterate>
@@ -43,7 +50,8 @@
 				<div class="row">
 					<div class="col-md-12">
 						<nested:equal property="canCreate" value="true">
-							<center><input class="btn btn-success" type="button" value=" เพิ่มข้อมูลระบบงาน " onclick="doCmd('goCreate')" /></center>
+							<center>
+							
 						</nested:equal>
 					</div>
 				</div>

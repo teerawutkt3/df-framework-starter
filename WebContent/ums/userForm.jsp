@@ -48,14 +48,14 @@ function checkToDateStatus(val) {
 <input type="hidden" name="cmd" value="" />
 <nested:hidden property="formData.id" />
 
-<div class="row">
+<div class="row form-group">
 	<div class="col-md-12">
 		<div class="box box-primary">
 			<div class="box-header with-border">
 				<h3 class="box-title"><nested:write property="formModeStr" />ข้อมูลผู้ใช้งาน</h3>
 			</div>
 			<div class="box-body">
-				<div class="row">
+				<div class="row form-group">
 					<div class="col-md-4">
 						<label class="label-form"></label>
 					</div>
@@ -64,7 +64,7 @@ function checkToDateStatus(val) {
 					</div>
 				</div>
 				
-				<div class="row">
+				<div class="row form-group">
 					<div class="col-md-4">
 						<label class="label-form">รหัสผู้ใช้</label>
 					</div>
@@ -72,7 +72,7 @@ function checkToDateStatus(val) {
 						<nested:text styleClass="form-control" property="formData.login" size="15" maxlength="13" lang="property['รหัสผู้ใช้',required,,13]" disabled="<%= !createMode.booleanValue() %>" />
 					</div>
 				</div>
-				<div class="row">
+				<div class="row form-group">
 					<div class="col-md-4">
 						<label class="label-form">ชื่อผู้ใช้งาน</label>
 					</div>
@@ -80,7 +80,7 @@ function checkToDateStatus(val) {
 						<nested:text styleClass="form-control" property="formData.note1" size="30" maxlength="100" lang="property['ชื่อผู้ใช้งาน',required,,100]" disabled="<%= !editable.booleanValue() %>" />
 					</div>
 				</div>
-				<div class="row">
+				<div class="row form-group">
 					<div class="col-md-4">
 						<label class="label-form">สังกัด</label>
 					</div>
@@ -89,7 +89,7 @@ function checkToDateStatus(val) {
 					</div>
 				</div>
 				<nested:equal property="createMode" value="true">
-				<div class="row">
+				<div class="row form-group">
 					<div class="col-md-4">
 						<label class="label-form">รหัสผ่าน</label>
 					</div>
@@ -97,10 +97,10 @@ function checkToDateStatus(val) {
 						<nested:password styleClass="form-control" property="password1" size="20" maxlength="20" lang="property['รหัสผ่าน',required,6,15,isPasswordChars]" />
 					</div>
 					<div class="col-md-1">
-						<input type="button" class="btn btn-default" value="สุ่มรหัสผ่าน" onclick="setRandomPassword(this.form)" />
+						<input type="button" class="btn btn-default btn-sm" value="สุ่มรหัสผ่าน" onclick="setRandomPassword(this.form)" />
 					</div>
 				</div>
-				<div class="row">
+				<div class="row form-group">
 					<div class="col-md-4">
 						<label class="label-form">ยืนยันรหัสผ่าน</label>
 					</div>
@@ -109,15 +109,17 @@ function checkToDateStatus(val) {
 					</div>
 				</div>
 				</nested:equal>
-				<div class="row">
-					<div class="col-md-4">
-						<label class="label-form">วันที่เริ่มต้น</label>
+					<div class="row form-group">
+						<div class="col-md-4">
+							<label class="label-form">วันที่เริ่มต้น</label>
+						</div>
+						<div class="col-md-2">
+							<nested:text property="formData.fromDateStr"
+								disabled="<%= !editable.booleanValue() %>"
+								styleClass="form-control datepicker" />
+						</div>
 					</div>
-					<div class="col-md-2">
-						<nested:text property="formData.fromDateStr" disabled="<%= !editable.booleanValue() %>" styleClass="form-control datepicker" />
-					</div>
-				</div>
-				<div class="row">
+					<div class="row form-group">
 					<div class="col-md-4">
 						<label class="label-form">วันที่สิ้นสุด</label>
 					</div>
@@ -125,7 +127,7 @@ function checkToDateStatus(val) {
 						<nested:text styleClass="form-control datepicker" property="formData.toDateStr" lang="property['วันที่สิ้นสุด',,,,isToDate,formData.fromDateStr]" disabled="<%= !editable.booleanValue() %>" />
 					</div>
 				</div>
-				<div class="row">
+				<div class="row form-group">
 					<div class="col-md-4">
 						<label class="label-form">สถานะ</label>
 					</div>
@@ -135,7 +137,7 @@ function checkToDateStatus(val) {
 						</nested:select>
 					</div>
 				</div>
-				<div class="row">
+				<div class="row form-group">
 					<div class="col-md-4">
 						<label class="label-form">หมายเหตุ</label>
 					</div>
@@ -144,7 +146,7 @@ function checkToDateStatus(val) {
 					</div>
 				</div>
 				<nested:equal property="editable" value="false">
-					<div class="row">
+					<div class="row form-group">
 						<div class="col-md-4">
 							<label class="label-form">เปลี่ยนรหัสผ่านครั้งล่าสุด</label>
 						</div>
@@ -152,7 +154,7 @@ function checkToDateStatus(val) {
 							<nested:write property="formData.lastChangePasswordStr" />
 						</div>
 					</div>
-					<div class="row">
+					<div class="row form-group">
 						<div class="col-md-4">
 							<label class="label-form">การเข้าสู่ระบบสำเร็จล่าสุด</label>
 						</div>
@@ -160,7 +162,7 @@ function checkToDateStatus(val) {
 							<nested:write property="formData.lastLoginSuccessStr" />
 						</div>
 					</div>
-					<div class="row">
+					<div class="row form-group">
 						<div class="col-md-4">
 							<label class="label-form">การเข้าสู่ระบบไม่สำเร็จล่าสุด</label>
 						</div>
@@ -168,7 +170,7 @@ function checkToDateStatus(val) {
 							<nested:write property="formData.lastLoginFailedStr" />
 						</div>
 					</div>
-					<div class="row">
+					<div class="row form-group">
 						<div class="col-md-4">
 							<label class="label-form">จำนวนครั้งเข้าสู่ระบบไม่สำเร็จล่าสุด</label>
 						</div>
@@ -242,11 +244,12 @@ function checkToDateStatus(val) {
 			</div>
 			<div class="box-footer">
 				<nested:equal property="editable" value="true">
-					<input class="btn btn-success" type="button" name="saveBtn" value=" บันทึก " onclick="doCmd('doSave')" />
+					<button class="btn btn-success btn-sm" type="button" onclick="doCmd('doSave')"><i class="ti-save"></i>บันทึก</button>
 					<nested:equal property="canChangePassword" value="true"><nested:equal property="createMode" value="false">
-						<input class="btn btn-warning" type="button" value=" กำหนดรหัสผ่าน " onclick="doCmd('goPassword')" /></nested:equal></nested:equal>
+						<input class="btn btn-warning btn-sm" type="button" value=" กำหนดรหัสผ่าน " onclick="doCmd('goPassword')" /></nested:equal></nested:equal>
 				</nested:equal>
-				<input type="button" class="btn btn-secondary" value=" กลับไป " onclick="doCmd('list')" />
+					<button class="btn btn-secondary btn-sm" type="button" onclick="doCmd('list')"><i class="fa fa-reply" aria-hidden="true"></i> กลับ</button>
+<%-- 				<input type="button" class="btn btn-secondary btn-sm" value="<i class="fa fa-reply" aria-hidden="true"></i> กลับไป " onclick="doCmd('list')" /> --%>
 			</div>
 		</div>
 	</div>

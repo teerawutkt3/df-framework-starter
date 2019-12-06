@@ -11,7 +11,7 @@
 	<div class="col-md-12">
 		<div class="box box-primary">
 			<div class="box-header with-border">
-				<div class="row">
+				<div class="row mb-3 ">
 					<div class="col-md-12">
 						<h3 class="box-title"><nested:write property="formModeStr" />ข้อมูลประเภทหน้าจอ</h3>
 					</div>
@@ -33,9 +33,14 @@
 			</div>
 			<div class="box-footer">
 				<div class="row">
-					<div class="col-md-12">
-						<nested:equal property="editable" value="true"><input class="btn btn-success" type="button" value=" บันทึก " onclick="doCmd('doSave')" /></nested:equal>
-						<input type="button" value=" กลับไป " class="btn btn-secondary" onclick="doCmd('list')" />
+					<div class="col-md-12">						
+						<nested:equal property="editable" value="true">						
+						<button class="btn btn-success btn-sm" type="button" onclick="doCmd('doSave')">
+							<i class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp;บันทึก
+						</button>
+						</nested:equal>
+						<button class="btn btn-secondary btn-sm" type="button" onclick="doCmd('list')">
+						<i class="fa fa-reply" aria-hidden="true"></i>&nbsp;กลับ</button>						
 					</div>
 				</div>
 			</div>

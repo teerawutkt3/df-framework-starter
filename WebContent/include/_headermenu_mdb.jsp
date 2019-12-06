@@ -19,10 +19,10 @@ com.depthfirst.framework.ums.web.UserSession userSession =
 <%-- <title>SIS CCIS [<%= java.net.Inet4Address.getLocalHost().getHostName() %>]
 </title> --%>
 <title>
- lec.dla.go.th (Local Education Center Information System)
+  DF Framework
 </title>
 <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-
+ <link rel="icon" href="<%= request.getContextPath() %>/assets/images/df_logo.png" type="image/x-icon">
 <script type="text/javascript">
 
 var ctxPath = "<%= request.getContextPath() %>";
@@ -31,8 +31,6 @@ var ctxPath = "<%= request.getContextPath() %>";
 <!-- font -->
 <link href="<%= request.getContextPath() %>/assets/font/fonts.css" rel="stylesheet">
 
-<!-- fontawesome-4.7.0 -->
-<link rel="stylesheet" href="<%= request.getContextPath() %>/assets/lib/fontawesome-4.7.0/css/font-awesome.min.css" />
 <!-- Required Fremwork -->
 <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/assets/lib/theme/gradient-able-bsp4-lite/assets/css/bootstrap/css/bootstrap.min.css">
 <!-- themify-icons line icon -->
@@ -58,11 +56,11 @@ var ctxPath = "<%= request.getContextPath() %>";
 
 </head>
 <body>
-	<div class="fixed-button">
-		<a href="https://codedthemes.com/item/gradient-able-admin-template" target="_blank" class="btn btn-md btn-primary">
-			<i class="fa fa-shopping-cart" aria-hidden="true"></i> Upgrade To Pro
-		</a>
-	  </div>
+<!-- 	<div class="fixed-button"> -->
+<!-- 		<a href="https://codedthemes.com/item/gradient-able-admin-template" target="_blank" class="btn btn-md btn-primary"> -->
+<!-- 			<i class="fa fa-shopping-cart" aria-hidden="true"></i> Upgrade To Pro -->
+<!-- 		</a> -->
+<!-- 	  </div> -->
      <!-- Pre-loader start -->
     <div class="theme-loader">
         <div class="loader-track">
@@ -106,15 +104,15 @@ var ctxPath = "<%= request.getContextPath() %>";
                            <li>
                                <div class="sidebar_toggle"><a href="javascript:void(0)"><i class="ti-menu"></i></a></div>
                            </li>
-                           <li class="header-search">
-                               <div class="main-search morphsearch-search">
-                                   <div class="input-group">
-                                       <span class="input-group-addon search-close"><i class="ti-close"></i></span>
-                                       <input type="text" class="form-control">
-                                       <span class="input-group-addon search-btn"><i class="ti-search"></i></span>
-                                   </div>
-                               </div>
-                           </li>
+<!--                            <li class="header-search"> -->
+<!--                                <div class="main-search morphsearch-search"> -->
+<!--                                    <div class="input-group"> -->
+<!--                                        <span class="input-group-addon search-close"><i class="ti-close"></i></span> -->
+<!--                                        <input type="text" class="form-control"> -->
+<!--                                        <span class="input-group-addon search-btn"><i class="ti-search"></i></span> -->
+<!--                                    </div> -->
+<!--                                </div> -->
+<!--                            </li> -->
                            <li>
                                <a href="#!" onclick="javascript:toggleFullScreen()">
                                    <i class="ti-fullscreen"></i>

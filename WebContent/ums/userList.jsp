@@ -60,25 +60,34 @@
 			<div class="box-footer">
 				<div class="row">
 					<div class="col-md-12">
-						<input class="btn btn-primary" type="button" value=" ค้นหา " onclick="doGoto(0)" />
-						<input class="btn btn-primary" type="button" value=" แสดงทั้งหมด " onclick="doCmd('listAll')" /> <input class="btn btn-primary" type="button" value=" เริ่มค้นหาใหม่ " onclick="doCmd('resetSearch')" />
-						<input class="btn btn-primary" type="button" value=" ส่งออกไฟล์ Excel " onclick="doCmd('exportExcel')" />
+						<input class="btn btn-primary btn-sm" type="button" value=" ค้นหา " onclick="doGoto(0)" />
+						<input class="btn btn-primary btn-sm" type="button" value=" แสดงทั้งหมด " onclick="doCmd('listAll')" /> 
+						<input class="btn btn-primary btn-sm" type="button" value=" เริ่มค้นหาใหม่ " onclick="doCmd('resetSearch')" />
+						<input class="btn btn-primary btn-sm" type="button" value=" ส่งออกไฟล์ Excel " onclick="doCmd('exportExcel')" />
 					</div>
 				</div>
 			</div>
 		</div>
 		<hr>
+		<div class="row mb-2">
+				<div class="col-lg-6 col-md-6">
+					<nested:equal property="canUpdate" value="true">
+						<input class="btn btn-success btn-sm" type="button" value=" เปิดการใช้งาน " onclick="if(confirm('ยืนยันการเปิดการใช้งาน')) doCmd('doEnableUsers')" />
+						<input class="btn btn-danger btn-sm" type="button" value=" ปิดการใช้งาน " onclick="if(confirm('ยืนยันการปิดการใช้งาน')) doCmd('doDisableUsers')" />
+					</nested:equal>
+				</div>
+				<div class="col-lg-6 col-md-6 text-right">
+					<nested:equal property="canCreate" value="true">
+						<button class="btn btn-success btn-sm" type="button" onclick="doCmd('goCreate')"><i class="ti-plus"></i>เพิ่มข้อมูล</button>
+					</nested:equal>
+					<input class="btn btn-info btn-sm" type="button" value=" การใช้งานขณะนี้ " onclick="doCmd('listUserSession')" />
+				</div>
+		</div>
+
 		<div class="box box-primary">
 			<nested:notEmpty property="searchResult.data">
 				<div class="box-header with-border">
-					<div class="row">
-						<div class="col-md-12">
-							<nested:equal property="canUpdate" value="true">
-								<input class="btn btn-success" type="button" value=" เปิดการใช้งาน " onclick="if(confirm('ยืนยันการเปิดการใช้งาน')) doCmd('doEnableUsers')" />
-								<input class="btn btn-danger" type="button" value=" ปิดการใช้งาน " onclick="if(confirm('ยืนยันการปิดการใช้งาน')) doCmd('doDisableUsers')" />
-							</nested:equal>
-						</div>
-					</div>
+					
 				</div>
 				<div class="box-body">
 					<div class="row">
@@ -104,9 +113,14 @@
 										<td><nested:write name="result" property="note2" /></td>
 										<td><nested:write name="result" property="isActiveLabel" /></td>
 										<td align="center" nowrap="nowrap">
-											&nbsp;<a class="btn btn-info btn-sm" title="ดูข้อมูล" href="javascript:doCmd('goView', <%= ind %>)"><i class="fa fa-search" aria-hidden="true"></i></a>&nbsp;
-											<nested:equal name="<%= pageCode %>" property="canUpdate" value="true">&nbsp;<a title="แก้ไข" class="btn btn-warning btn-sm" href="javascript:doCmd('goUpdate', <%= ind %>)"><i class="fa fa-edit" aria-hidden="true"></i></a>&nbsp;</nested:equal>
-											<nested:equal name="<%= pageCode %>" property="canDelete" value="true">&nbsp;<a title="ลบข้อมูล" class="btn btn-danger btn-sm" href="javascript:doCmd('doDelete', <%= ind %>)"><i class="fa fa-trash" aria-hidden="true"></i></a>&nbsp;</nested:equal>
+											&nbsp;<a class="btn btn-info btn-outline-info btn-icon" title="ดูข้อมูล" href="javascript:doCmd('goView', <%= ind %>)">
+											<i class="fa fa-search" aria-hidden="true"></i></a>
+											<nested:equal name="<%= pageCode %>" property="canUpdate" value="true">
+											<a title="แก้ไข" class="btn btn-warning btn-outline-warning btn-icon" href="javascript:doCmd('goUpdate', <%= ind %>)"><i class="fa fa-edit" aria-hidden="true"></i></a>
+											</nested:equal>
+											<nested:equal name="<%= pageCode %>" property="canDelete" value="true">
+											<a title="ลบข้อมูล" class="btn btn-danger btn-outline-danger btn-icon" href="javascript:doCmd('doDelete', <%= ind %>)"><i class="fa fa-trash" aria-hidden="true"></i></a>
+											</nested:equal>
 										</td>
 									</tr>
 									</nested:iterate>
@@ -133,8 +147,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<center>
-							<nested:equal property="canCreate" value="true"><input class="btn btn-success" type="button" value=" เพิ่มข้อมูล " onclick="doCmd('goCreate')" /></nested:equal>
-							<input class="btn btn-info" type="button" value=" การใช้งานขณะนี้ " onclick="doCmd('listUserSession')" />
+							
 						</center>
 					</div>
 				</div>

@@ -17,17 +17,17 @@
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="logoutModalLabel" style="color:#f98aa2 !important;"><i class="fas fa-exclamation-triangle"></i>&nbsp;แจ้งเตือน
- </h5>
+				<h5 class="modal-title text-danger" id="logoutModalLabel" >
+					<i class="ti-alert"></i>&nbsp;แจ้งเตือน</h5>
 				<button class="close" type="button" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">x</span>
 				</button>
 			</div>
 			<div class="modal-body">ต้องการออกจากระบบ ?</div>
 			<div class="modal-footer">
-				<button class="btn " style="background-color: #f98aa2 !important;" type="button" 
-				onclick="headerJs.logoutContinue()"><i class="fas fa-sign-out-alt"></i>&nbsp;ออกจากระบบ </button>
-				<button class="btn btn-default" type="button" data-dismiss="modal">ยกเลิก </button>
+				<button class="btn btn-danger" type="button" 
+				onclick="headerJs.logoutContinue()"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;ออกจากระบบ</button>
+				<button class="btn btn-default" type="button" data-dismiss="modal">ยกเลิก</button>
 			</div>
 		</div>
 	</div>
@@ -38,7 +38,8 @@
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title text-danger" id="deleteModalLabel"><i class="fas fa-exclamation-triangle"></i>&nbsp;แจ้งเตือน</h5>
+				<h5 class="modal-title text-danger" id="deleteModalLabel">
+				<i class="ti-alert"></i>&nbsp;แจ้งเตือน</h5>
 				<button class="close" type="button" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">x</span>
 				</button>
@@ -48,8 +49,9 @@
 				<span>ยืนยันการลบข้อมูล</span>
 			</div>
 			<div class="modal-footer">
-				<a title="ลบข้อมูล" class="btn btn-danger" href="javascript:doCmd('doDeleteContinue',0)"><i class="fas fa-check"></i>&nbsp;ตกลง</a>				
-				<button class="btn btn-default" type="button" data-dismiss="modal">ยกเเลิก</button>
+				<a class="btn btn-danger" href="javascript:doCmd('doDeleteContinue',0)">
+				<i class="ti-trash"></i>&nbsp;ตกลง</a>				
+				<button class="btn btn-default" type="button" data-dismiss="modal">ยกเลิก</button>
 			</div>
 		</div>
 	</div>
@@ -116,8 +118,8 @@ $(function () {
 	/* Block UI */
 	headerJs.blockUi = function() {
 		$.blockUI({
-<%--             message: '<img src="<%=request.getContextPath() %>/assets/images/loadingCCIS.gif" style="width:60px; padding-bottom: 5px;"/><br>กำลังโหลด...', --%>
-            message: '<img src="<%=request.getContextPath() %>/assets/images/loadingCCIS.svg" style="width:60px; padding-bottom: 5px;"/><br>กำลังโหลด...',
+<%--             message: '<img src="<%=request.getContextPath() %>/assets/images/loadingCCIS.gif" style="width:60px; padding-bottom: 5px;"/><br>à¸à¸³à¸¥à¸±à¸à¹à¸«à¸¥à¸...', --%>
+            message: '<img src="<%=request.getContextPath() %>/assets/images/loadingCCIS.svg" style="width:60px; padding-bottom: 5px;"/><br>à¸à¸³à¸¥à¸±à¸à¹à¸«à¸¥à¸...',
 
             css: {
                 'z-index': '6000',
