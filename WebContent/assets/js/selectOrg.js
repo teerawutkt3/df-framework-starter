@@ -2,7 +2,7 @@ var _orgTable=new Array('orgTable'), _hiddenOrgID=new Array('org_id'), _idPrefix
 var _required=new Array(), _changeFunc=new Array(), _rootOrgID=new Array();
 function _toSelectOrgHTML(level, orgs, selected, ind) {
 	var html = '<select name="'+_idPrefix[ind]+level+'" onchange="_changeOrg(this, '+ind+')"'+
-			(level==0&&_required[ind]?' lang="property[\'�ѧ�Ѵ\',required]"':'')+'>';
+			(level==0&&_required[ind]?' lang="property[\'สังกัด\',required]"':'')+'>';
 	html += '<option value=""></option>';
 	for(var n=0; n<orgs.length; n++)
 		html += '<option value="'+orgs[n].id+'"'+(selected!=null&&selected==orgs[n].id?' selected':'')+'>'+

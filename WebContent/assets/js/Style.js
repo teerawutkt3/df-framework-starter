@@ -1,5 +1,5 @@
 var _TotalStyle = 3;
-var _cssPrefix = (ctxPath!=null) ? ctxPath:'' + "/css/css";
+var _cssPrefix = (ctxPath!=null?ctxPath:'')+"/css/css";
 var _cssSuffix = ".css";
 function InitStyle() {
 	var strCss = getCookie("css");

@@ -6,7 +6,7 @@ function isDate(val, args, elName) {
 	if(formatDate(null, val)) {
 		return null;
 	} else {
-		return "�ѹ������١��ͧ";
+		return "วันที่ไม่ถูกต้อง";
 	}
 }
 
@@ -14,10 +14,10 @@ function isToDate(val, args, elName) {
 	if(formatDate(null, val)) {
 		var d1 = toDate(getForm().elements[args[0]].value);
 		var d2 = toDate(val);
-		if(d1>d2) return "��ǧ�ѹ������١��ͧ";
+		if(d1>d2) return "ช่วงวันที่ไม่ถูกต้อง";
 		return null;
 	} else {
-		return "�ѹ������١��ͧ";
+		return "วันที่ไม่ถูกต้อง";
 	}
 }
 
@@ -72,7 +72,7 @@ function formatDate(element, val) {
 	}
 	if (element!=null) {
 		if (!isCorrectDate) { 		
-			addError('�ѹ������١��ͧ', element);
+			addError('วันที่ไม่ถูกต้อง', element);
 		} else {
 			setError(null, element);
 		}
@@ -166,7 +166,7 @@ function checkDateFromDateTo(fromDate, toDate){
 	
 	if (fromDate.trim != "" && toDate.trim != "") {
 		if(checkDiffDate(fromDate, toDate) < 0){ 
-			alert('�բ�ͼԴ�Ҵ! �ѹ��������������ҡ�����ѹ����ش');
+			alert('มีข้อผิดลาด! วันที่เริ่มไม่ควรมากกว่าวันสิ้นสุด');
 			passDate = false;
 		}
 	} else {

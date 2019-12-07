@@ -7,14 +7,14 @@ function isNumber(val, args) {
 	if(val != null) {
 		//var useDecimal = args[0]=='decimal';
 		var useDecimal = args[0]=='true';
-		if((!useDecimal) && (val.toString().indexOf(".")>0)) emsg = "��سһ�͹�ӹǹ�����ҹ��";
+		if((!useDecimal) && (val.toString().indexOf(".")>0)) emsg = "กรุณาป้อนจำนวนเต็มเท่านั้น";
 
 		var minval = new Number(args[1]);
-		if(!isNaN(minval) && val<minval) emsg += (emsg!=""?", ":"")+"�ӹǹ��ͧ�����¡��� "+numberToCurrency(minval, useDecimal);
+		if(!isNaN(minval) && val<minval) emsg += (emsg!=""?", ":"")+"จำนวนต้องไม่น้อยกว่า "+numberToCurrency(minval, useDecimal);
 		var maxval = new Number(args[2]);
-		if(!isNaN(maxval) && val>maxval) emsg += (emsg!=""?", ":"")+"�ӹǹ��ͧ����Թ "+numberToCurrency(maxval, useDecimal);
+		if(!isNaN(maxval) && val>maxval) emsg += (emsg!=""?", ":"")+"จำนวนต้องไม่เกิน "+numberToCurrency(maxval, useDecimal);
 	} else {
-		emsg = "��سһ�͹����Ţ��ҹ��";
+		emsg = "กรุณาป้อนตัวเลขเท่านั้น";
 	}
 
 	return emsg!=""?emsg:null;

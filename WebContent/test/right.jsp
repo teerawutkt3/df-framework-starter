@@ -45,22 +45,26 @@ if(user!=null && request.getParameter("doSetPerType")!=null) {
 
 <!-- theme css-->
 
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="<%= request.getContextPath() %>/assets/lib/bootstrap4/bootstrap.min.css" />
-<link rel="stylesheet" href="<%= request.getContextPath() %>/assets/lib/fontawesome-4.7.0/css/font-awesome.min.css"/>
+<!-- font -->
+<link href="<%= request.getContextPath() %>/assets/font/fonts.css" rel="stylesheet">
 
-<!-- jQuery library -->
-<script src="<%= request.getContextPath() %>/assets/lib/jquery/jquery.min.js"></script>
+<!-- Required Fremwork -->
+<link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/assets/lib/theme/gradient-able-bsp4-lite/assets/css/bootstrap/css/bootstrap.min.css">
+<!-- themify-icons line icon -->
+<link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/assets/lib/theme/gradient-able-bsp4-lite/assets/icon/themify-icons/themify-icons.css">
+ <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/assets/lib/theme/gradient-able-bsp4-lite/assets/icon/font-awesome/css/font-awesome.min.css">
+<!-- ico font -->
+<link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/assets/lib/theme/gradient-able-bsp4-lite/assets/icon/icofont/css/icofont.css">
+<!-- Style.css -->
+<link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/assets/lib/theme/gradient-able-bsp4-lite/assets/css/style.css">
+<link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/assets/lib/theme/gradient-able-bsp4-lite/assets/css/jquery.mCustomScrollbar.css">
+ 
+ <!-- jQuery library -->
+<script type="text/javascript" src="<%= request.getContextPath() %>/assets/lib/theme/gradient-able-bsp4-lite/assets/js/jquery/jquery.min.js"></script>
 
-<!-- Popper JS -->
-<script src="<%= request.getContextPath() %>/assets/lib/bootstrap4/popper.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script src="<%= request.getContextPath() %>/assets/lib/bootstrap4/bootstrap.min.js"></script>
-
-<link href="<%= request.getContextPath() %>/css/style.css" rel="stylesheet" type="text/css">
-<link href="<%= request.getContextPath() %>/css/css0.css" rel="stylesheet" type="text/css">
-<script language="JavaScript" src="<%= request.getContextPath() %>/js/struts.js"></script>
+<%-- <link href="<%= request.getContextPath() %>/css/style.css" rel="stylesheet" type="text/css"> --%>
+<%-- <link href="<%= request.getContextPath() %>/css/css0.css" rel="stylesheet" type="text/css"> --%>
+<script language="JavaScript" src="<%= request.getContextPath() %>/assets/js/struts.js"></script>
 </head>
 
 <body>
@@ -85,9 +89,14 @@ if(user!=null && request.getParameter("doSetPerType")!=null) {
 			<div class="col-sm-6">
 					<% for(int i=0; i<UserSession.RIGHTS.length; i++) { %>
 						<div class="row">
-							<div class="custom-control custom-checkbox">
-								<input type="checkbox" class="custom-control-input" name="right"  id="<%= UserSession.RIGHTS[i] %>" />
-								<label class="custom-control-label" for="<%= UserSession.RIGHTS[i] %>"><%= UserSession.RIGHT_LABELS[i] %></label>
+							<div class="col-lg-12">
+							<div class="checkbox-fade fade-in-primary">
+                                 <label>
+                                     <input type="checkbox" name="right"  id="<%= UserSession.RIGHTS[i] %>" >
+                                     <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                                     <span class="text-inverse"><%= UserSession.RIGHT_LABELS[i] %></span>
+                                 </label>
+                             </div>
 							</div>
 						</div>
 					<% } %>

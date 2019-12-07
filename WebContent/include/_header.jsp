@@ -34,18 +34,18 @@ var ctxPath = "<%= request.getContextPath() %>";
 <link href="<%= request.getContextPath() %>/css/css0.css" rel="stylesheet" type="text/css">
 <!-- theme bootstrap end-->
 
-<script language="JavaScript" src="<%= request.getContextPath() %>/js/win.js"></script>
-<script language="JavaScript" src="<%= request.getContextPath() %>/js/util.js"></script>
-<script language="JavaScript" src="<%= request.getContextPath() %>/js/struts.js"></script>
-<script language="JavaScript" src="<%= request.getContextPath() %>/js/popupCalendar.js"></script>
-<script language="JavaScript" src="<%= request.getContextPath() %>/js/validateForm.js"></script>
-<script language="JavaScript" src="<%= request.getContextPath() %>/js/validateDate.js"></script>
-<script language="JavaScript" src="<%= request.getContextPath() %>/js/validateNumber.js"></script>
+<script language="JavaScript" src="<%= request.getContextPath() %>/assets/js/win.js"></script>
+<script language="JavaScript" src="<%= request.getContextPath() %>/assets/js/util.js"></script>
+<script language="JavaScript" src="<%= request.getContextPath() %>/assets/js/struts.js"></script>
+<script language="JavaScript" src="<%= request.getContextPath() %>/assets/js/popupCalendar.js"></script>
+<script language="JavaScript" src="<%= request.getContextPath() %>/assets/js/validateForm.js"></script>
+<script language="JavaScript" src="<%= request.getContextPath() %>/assets/js/validateDate.js"></script>
+<script language="JavaScript" src="<%= request.getContextPath() %>/assets/js/validateNumber.js"></script>
 
-<script language="JavaScript" src="<%= request.getContextPath() %>/js/Cookies.js"></script>
-<script language="JavaScript" src="<%= request.getContextPath() %>/js/Style.js"></script>
+<script language="JavaScript" src="<%= request.getContextPath() %>/assets/js/Cookies.js"></script>
+<script language="JavaScript" src="<%= request.getContextPath() %>/assets/js/Style.js"></script>
 
-<script language="JavaScript" src="<%= request.getContextPath() %>/js/tab.js"></script>
+<script language="JavaScript" src="<%= request.getContextPath() %>/assets/js/tab.js"></script>
 <script type="text/javascript" src="<%= request.getContextPath() %>/treeview/jquery.treeview.min.js"></script>
 <script type="text/javascript" src="<%= request.getContextPath() %>/treeview/lib/jquery.cookie.js" ></script>
 <script type="text/javascript" src="<%= request.getContextPath() %>/treeview/jquery.treeview.js" ></script>

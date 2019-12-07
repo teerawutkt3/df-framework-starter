@@ -8,138 +8,146 @@ if(com.depthfirst.framework.ums.struts.CookiesLoginAction.hasLoginCookies(reques
 %><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=TIS-620" />
-<meta http-equiv="X-UA-Compatible" content="IE=8" />
-<title> DF Starter : Depth First Co., Ltd. </title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=5; IE=EDGE ;IE=9; IE=EmulateIE9; IE=8; IE=EmulateIE8; IE=7; IE=EmulateIE7; IE=11; IE=EmulateIE10; IE=10; IE=EmulateIE11; IE=EmulateIE8" />
+<!-- <meta http-equiv="x-ua-compatible" content="ie=edge"> -->
+<title>lec.dla.go.th (Local Education Center Information System) </title>
+
+<!-- font -->
+<link href="<%= request.getContextPath() %>/assets/font/fonts.css" rel="stylesheet">
+
+<!-- Required Fremwork -->
+<link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/assets/lib/theme/gradient-able-bsp4-lite/assets/css/bootstrap/css/bootstrap.min.css">
+<!-- themify-icons line icon -->
+<link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/assets/lib/theme/gradient-able-bsp4-lite/assets/icon/themify-icons/themify-icons.css">
+ <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/assets/lib/theme/gradient-able-bsp4-lite/assets/icon/font-awesome/css/font-awesome.min.css">
+<!-- ico font -->
+<link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/assets/lib/theme/gradient-able-bsp4-lite/assets/icon/icofont/css/icofont.css">
+<!-- Style.css -->
+<link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/assets/lib/theme/gradient-able-bsp4-lite/assets/css/style.css">
+<link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/assets/lib/theme/gradient-able-bsp4-lite/assets/css/jquery.mCustomScrollbar.css">
+ 
+ 
 <script language="JavaScript">
 <!--
 var ctxPath = "<%= ctxPath %>";
 // -->
 setTimeout(function() { document.getElementById('loginField').focus(); }, 10);
 </script>
-<script language="JavaScript" src="<%= ctxPath %>/js/win.js"></script>
-<script language="JavaScript" src="<%= ctxPath %>/js/util.js"></script>
-<script language="JavaScript" src="<%= ctxPath %>/js/struts.js"></script>
-<script language="JavaScript" src="<%= ctxPath %>/js/popupCalendar.js"></script>
-<script language="JavaScript" src="<%= ctxPath %>/js/validateForm.js"></script>
-<script language="JavaScript" src="<%= ctxPath %>/js/validateDate.js"></script>
-<script language="JavaScript" src="<%= ctxPath %>/js/validateNumber.js"></script>
+<script language="JavaScript" src="<%= ctxPath %>/assets/js/win.js"></script>
+<script language="JavaScript" src="<%= ctxPath %>/assets/js/util.js"></script>
+<script language="JavaScript" src="<%= ctxPath %>/assets/js/struts.js"></script>
+<%-- <script language="JavaScript" src="<%= ctxPath %>/assets/js/popupCalendar.js"></script> --%>
+<script language="JavaScript" src="<%= ctxPath %>/assets/js/validateForm.js"></script>
+<script language="JavaScript" src="<%= ctxPath %>/assets/js/validateDate.js"></script>
+<script language="JavaScript" src="<%= ctxPath %>/assets/js/validateNumber.js"></script>
 
-<!-- theme css-->
-
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="<%= request.getContextPath() %>/assets/lib/bootstrap4/bootstrap.min.css" />
-<link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/login.css"/>
-<link rel="stylesheet" href="<%= request.getContextPath() %>/assets/lib/fontawesome-4.7.0/css/font-awesome.min.css"/>
+<link href="<%= request.getContextPath() %>/assets/font/fonts.css" rel="stylesheet">
 
 <!-- jQuery library -->
 <script src="<%= request.getContextPath() %>/assets/lib/jquery/jquery.min.js"></script>
 
-<!-- Popper JS -->
-<script src="<%= request.getContextPath() %>/assets/lib/bootstrap4/popper.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script src="<%= request.getContextPath() %>/assets/lib/bootstrap4/bootstrap.min.js"></script>
-
-<!--style for login page only-->
-<style>
-</style>
 </head>
 <%@ taglib uri="/WEB-INF/tld/struts-nested.tld" prefix="nested"%>
 <body class="bg-gradient-primary">
 <!-- deployDate[] -->
 <nested:form action="/login">
 <input type="hidden" name="cmd" value="doLogin" />
-<nested:hidden property="urlToken" />
- <div class="container">
-    <!-- Outer Row -->
-    <div class="row justify-content-center">
+<nested:hidden property="urlToken" />  
+      <!-- Pre-loader start -->
+    <div class="theme-loader">
+        <div class="loader-track">
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+    <!-- Pre-loader end -->
 
-      <div class="col-xl-10 col-lg-12 col-md-9">
-
-        <div class=" o-hidden border-0 ">
-          <div>
-            <!-- Nested Row within Card Body -->
+    <section class="login p-fixed d-flex text-center bg-primary common-img-bg">
+        <!-- Container-fluid starts -->
+        <div class="container">
             <div class="row">
-              
-              <div class="col-lg-12">
-                <div class="p-5">
-                  <div class="text-center">
-                    <h1 class="h4 mb-4" style="color:#ffffff;">Welcome Back!</h1>
-                  </div>
-                  <br/>
-                  <br/>
-                  <form class="user">
-                   <div class="container h-100">
-				        <div class="d-flex justify-content-center h-100">
-				            <div class="user_card">
-				                <div class="d-flex justify-content-center">
-				                    <div class="brand_logo_container">
-				                        <img src="<%= request.getContextPath() %>/assets/images/df_logo.png" class="brand_logo" alt="Logo" />
-				                    </div>
-				                </div>
-				                <div class="d-flex justify-content-center form_container">                	
-				                    <div >                    	
-				                        <div class="input-group mb-3">
-				                            <div class="input-group-append">
-				                                <span class="input-group-text"><i class="fa fa-user-circle-o"></i></span>
-				                            </div>
-				                            <input type="login"  class="form-control input_user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Username" />
-				                        </div>
-				                        <div class="input-group mb-2">
-				                            <div class="input-group-append">
-				                                <span class="input-group-text"><i class="fa fa-unlock-alt  fa-lg"></i></span>
-				                            </div>
-				                            <input type="password" class="form-control input_pass" id="exampleInputPassword" placeholder="Password"/>
-				                        </div>
-				                        <div class="form-group">
-				                            <div class="custom-control custom-checkbox">
-				                                <input type="checkbox" class="custom-control-input" id="customCheck"/>
-				                                <label class="custom-control-label" for="customCheck">Remember me</label>
-				                            </div>
-				                        </div>
-				                    </div>
-				                </div>
-				                <div class="d-flex justify-content-center mt-3 login_container">               
-				                      <button type="submit" class="btn login_btn"><i class="fa fa-sign-in"></i> Login</button>                            
-				                </div><br>
-				                <div class="d-flex justify-content-center login_container">               
-				                      <a href="index.html" class="btn btn-sm btn-danger btn-user btn-block">
-				                       <i class="fa fa-google"></i> Login with Google
-				                      </a>                         
-				                </div><br>
-								
-				                <div class="mt-4">
-				                    <div class="d-flex justify-content-center links">
-				                        Don't have an account? <a href="#" class="ml-2">Sign Up</a>
-				                    </div>
-				                    <div class="d-flex justify-content-center links">
-				                         <a class="small" href="forgot-password.html">Forgot Password?</a>
-				                    </div>
-				                </div>
-				            </div>            
-				        </div>        
-				    </div>
-    
-                  </form>
-                  
+                <div class="col-sm-12">
+                    <!-- Authentication card start -->
+                    <div class="login-card card-block auth-body mr-auto ml-auto">
+                        <form class="md-float-material">
+                            <div class="text-center">
+                                <img src="<%= request.getContextPath() %>/assets/images/df_logo.png" alt="logo.png">
+                            </div>
+                            <div class="auth-box">
+                                <div class="row m-b-20">
+                                    <div class="col-md-12">
+                                        <h3 class="text-left txt-primary">Sign In</h3>
+                                    </div>
+                                </div>
+                                <hr/>
+                                <div class="input-group">
+                                	<input type="text" name="login" class="form-control" id="exampleInputEmail" placeholder="Username" />
+<!--                                     <input type="email" class="form-control" placeholder="Your Email Address"> -->
+                                    <span class="md-line"></span>
+                                </div>
+                                <div class="input-group">
+<!--                                     <input type="password" class="form-control" placeholder="Password"> -->
+                                    <input type="password"  name="password" class="form-control" id="exampleInputPassword" placeholder="Password"/>
+                                    <span class="md-line"></span>
+                                </div>
+                                <div class="row m-t-25 text-left">
+                                    <div class="col-sm-7 col-xs-12">
+                                        <div class="checkbox-fade fade-in-primary">
+                                            <label>
+                                                <input type="checkbox" value="" id="customCheck">
+                                                <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                                                <span class="text-inverse">Remember me</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5 col-xs-12 forgot-phone text-right">
+                                        <a href="auth-reset-password.html" class="text-right f-w-600 text-inverse"> Forgot Your Password?</a>
+                                    </div>
+                                </div>
+                                <div class="row m-t-30">
+                                    <div class="col-md-12">
+                                        <button type="submit" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Sign in</button>
+                                    </div>
+                                </div>
+                                <hr/>
+                                <div class="row">
+                                    <div class="col-md-12 col-lg-12">
+                                        <p class="text-inverse text-left m-b-0  text-center">Depth First Co., Ltd. Copyright &copy; All rights reserved.</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </form>
+                        <!-- end of form -->
+                    </div>
+                    <!-- Authentication card end -->
                 </div>
-              </div>
+                <!-- end of col-sm-12 -->
             </div>
-           </div>
-        </div>        
-      </div>
-      	<div class="row">
-			<div class="text-white">
-	 			Depth First Co., Ltd. Copyright &copy; All rights reserved.
-			</div>
-		</div>
-	</div>
-   </div>
+            <!-- end of row -->
+        </div>
+        <!-- end of container-fluid -->
+    </section>
  	 
 </nested:form> 
 
 <!-- Session Count[<%= com.depthfirst.framework.ums.web.UserSession.getSessionCount() %>] -->
+<script type="text/javascript" src="<%= request.getContextPath() %>/assets/lib/theme/gradient-able-bsp4-lite/assets/js/jquery-ui/jquery-ui.min.js"></script>
+<script type="text/javascript" src="<%= request.getContextPath() %>/assets/lib/theme/gradient-able-bsp4-lite/assets/js/popper.js/popper.min.js"></script>
+<script type="text/javascript" src="<%= request.getContextPath() %>/assets/lib/theme/gradient-able-bsp4-lite/assets/js/bootstrap/js/bootstrap.min.js"></script>
+<!-- jquery slimscroll js -->
+<script type="text/javascript" src="<%= request.getContextPath() %>/assets/lib/theme/gradient-able-bsp4-lite/assets/js/jquery-slimscroll/jquery.slimscroll.js"></script>
+<!-- modernizr js -->
+<script type="text/javascript" src="<%= request.getContextPath() %>/assets/lib/theme/gradient-able-bsp4-lite/assets/js/modernizr/modernizr.js"></script>
+<script type="text/javascript" src="<%= request.getContextPath() %>/assets/lib/theme/gradient-able-bsp4-lite/assets/js/modernizr/css-scrollbars.js"></script>
+
+<!-- Custom js -->
+<script type="text/javascript" src="<%= request.getContextPath() %>/assets/lib/theme/gradient-able-bsp4-lite/assets/js/script.js"></script>
+<script src="<%= request.getContextPath() %>/assets/lib/theme/gradient-able-bsp4-lite/assets/js/pcoded.min.js"></script>
+<script src="<%= request.getContextPath() %>/assets/lib/theme/gradient-able-bsp4-lite/assets/js/vartical-demo.js"></script>
+<script src="<%= request.getContextPath() %>/assets/lib/theme/gradient-able-bsp4-lite/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+
 <%@ include file="/include/_responseMessage.jsp" %>
 <script language="JavaScript">
 <!--

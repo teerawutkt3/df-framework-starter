@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="/WEB-INF/tld/struts-nested.tld" prefix="nested"%>
 
-<%@ include file="/include/_headerpopup_mdb.jsp" %>
+<%@ include file="/include/_headerpopup.jsp" %>
 
 <script language="JavaScript">
 <!--
@@ -58,4 +58,4 @@ function doSelect(form) {
 
 </nested:form>
 
-<%@ include file="/include/_footerpopup_mdb.jsp" %>
+<%@ include file="/include/_footerpopup.jsp" %>

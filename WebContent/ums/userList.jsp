@@ -95,8 +95,18 @@
 							<div class="box-responsive">
 								<table class="table table-bordered table-striped table-hover table-sm">
 									<tr class="info">
-									<nested:equal property="canUpdate" value="true"><th width="2%">
-										<input type="checkbox" name="status_all" onclick="doCheckAll(this.form, 'status_all', 'status_ind')" /></th></nested:equal>
+									<nested:equal property="canUpdate" value="true">
+										<th width="2%">
+											<div class="checkbox-fade fade-in-primary">
+				                                 <label>
+				                                     <input type="checkbox" name="status_all"  onclick="doCheckAll(this.form, 'status_all', 'status_ind')">
+				                                     <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+				                                     <span class="text-inverse">&nbsp;</span>
+				                                 </label>
+				                             </div>
+<!-- 											<input type="checkbox" name="status_all" onclick="doCheckAll(this.form, 'status_all', 'status_ind')" /> -->
+										</th>
+									</nested:equal>
 									<th width="2%">&nbsp;</th>
 									<% String thOrderBy[][] = {{"รหัสผู้ใช้", "o.login"}, {"ชื่อผู้ใช้งาน", "o.note1"}, {"สังกัด", "o.note2"}, {"สถานะ", "o.isActive"}};
 									%><%@ include file="/include/_thorderby.jsp" %>
@@ -105,9 +115,20 @@
 									<nested:define id="searchCondition" property="searchCondition" type="com.depthfirst.framework.search.SearchCondition" />
 									<nested:iterate property="searchResult.data" id="result" indexId="ind">
 									<tr class="tr<%= ind.intValue()%2 %>">
-										<nested:equal name="<%= pageCode %>" property="canUpdate" value="true"><td align="center" valign="top">
-											<input type="checkbox" name="status_ind" value="<%= ind.intValue() %>" onclick="doCheckId(this.form, 'status_all', 'status_ind')" /></td></nested:equal>
-										<td align="right" nowrap="nowrap">&nbsp;<%= ind.intValue()+searchCondition.getPosition()+1 %>&nbsp;</td>
+										<nested:equal name="<%= pageCode %>" property="canUpdate" value="true">
+											<td align="center" valign="top">
+											<div class="checkbox-fade fade-in-primary">
+				                                 <label>
+				                                     <input type="checkbox" name="status_ind" value="<%= ind.intValue() %>"  onclick="doCheckId(this.form, 'status_all', 'status_ind')" >
+				                                     <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+				                                     <span class="text-inverse">&nbsp;</span>
+				                                 </label>
+				                             </div>
+<%-- 												<input type="checkbox" name="status_ind" value="<%= ind.intValue() %>" onclick="doCheckId(this.form, 'status_all', 'status_ind')" /> --%>
+											</td>
+										</nested:equal>
+										<td align="right" nowrap="nowrap">&nbsp;<%= ind.intValue()+searchCondition.getPosition()+1 %>&nbsp;
+										</td>
 										<td><nested:write name="result" property="login" /></td>
 										<td><nested:write name="result" property="note1" /></td>
 										<td><nested:write name="result" property="note2" /></td>

@@ -59,5 +59,5 @@ function _isPersonalID(TSSN) {
 }
 
 function isPsnId(val) {
-  return _isPersonalID(val)?null:"�Ţ��Шӵ�ǻ�ЪҪ����١��ͧ";
+  return _isPersonalID(val)?null:"เลขประจำตัวประชาชนไม่ถูกต้อง";
 }

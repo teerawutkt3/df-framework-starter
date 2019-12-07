@@ -44,7 +44,8 @@ var ctxPath = "<%= request.getContextPath() %>";
  
  <!-- jQuery library -->
 <script type="text/javascript" src="<%= request.getContextPath() %>/assets/lib/theme/gradient-able-bsp4-lite/assets/js/jquery/jquery.min.js"></script>
-
+<!-- Sweet Alert2 -->
+<script src="<%= request.getContextPath() %>/assets/lib/sweet-alert2/sweet-alert.js"></script>
 <!-- js framework -->
 <script src="<%= request.getContextPath() %>/assets/js/win.js"></script>
 <script src="<%= request.getContextPath() %>/assets/js/util.js"></script>
@@ -53,7 +54,17 @@ var ctxPath = "<%= request.getContextPath() %>";
 <script src="<%= request.getContextPath() %>/assets/js/validateNumber.js"></script>
 <script src="<%= request.getContextPath() %>/assets/js/validatePsnId.js"></script>
 <script src="<%= request.getContextPath() %>/assets/js/Style.js"></script>
-
+<style>
+.btn.btn-icon {
+    border-radius: 50%;
+    width: 34px;
+    line-height: 30px;
+    height: 33px;
+    padding: 1px;
+    text-align: center;
+    padding-left: 5px;
+}
+</style>
 </head>
 <body>
 <!-- 	<div class="fixed-button"> -->
@@ -166,29 +177,31 @@ var ctxPath = "<%= request.getContextPath() %>";
                            <li class="user-profile header-notification">
                                <a href="#!">
                                    <img src="<%= request.getContextPath() %>/assets/images/df_logo.png" class="img-radius" alt="User-Profile-Image">
-                                   <span>John Doe</span>
+                                   <span>
+                                   	<%=SearchCondition.hasValue(com.depthfirst.framework.ums.web.UserSession.currentUserSession())?com.depthfirst.framework.ums.web.UserSession.currentUserSession().getLogin() : ""%>
+                                   </span>
                                    <i class="ti-angle-down"></i>
                                </a>
                                <ul class="show-notification profile-notification">
-                                   <li>
-                                       <a href="#!">
-                                           <i class="ti-settings"></i> Settings
-                                       </a>
-                                   </li>
+<!--                                    <li> -->
+<!--                                        <a href="#!"> -->
+<!--                                            <i class="ti-settings"></i> Settings -->
+<!--                                        </a> -->
+<!--                                    </li> -->
                                    <li>
                                        <a href="user-profile.html">
-                                           <i class="ti-user"></i> Profile
+                                           <i class="ti-user"></i> โปรไฟล์
                                        </a>
                                    </li>
                                    
-                                   <li>
-                                       <a href="auth-lock-screen.html">
-                                           <i class="ti-lock"></i> Lock Screen
-                                       </a>
-                                   </li>
+<!--                                    <li> -->
+<!--                                        <a href="auth-lock-screen.html"> -->
+<!--                                            <i class="ti-lock"></i> Lock Screen -->
+<!--                                        </a> -->
+<!--                                    </li> -->
                                    <li>
                                        <a href="#" onclick="headerJs.logout()">
-                                       <i class="ti-layout-sidebar-left"></i> Logout
+                                       <i class="ti-layout-sidebar-left"></i> ออกจากระบบ
                                    </a>
                                    </li>
                                </ul>

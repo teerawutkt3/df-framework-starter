@@ -12,26 +12,6 @@
 </div>
 </div>
 </div>
-<!-- Logout Modal-->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel" aria-hidden="true">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title text-danger" id="logoutModalLabel" >
-					<i class="ti-alert"></i>&nbsp;แจ้งเตือน</h5>
-				<button class="close" type="button" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">x</span>
-				</button>
-			</div>
-			<div class="modal-body">ต้องการออกจากระบบ ?</div>
-			<div class="modal-footer">
-				<button class="btn btn-danger" type="button" 
-				onclick="headerJs.logoutContinue()"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;ออกจากระบบ</button>
-				<button class="btn btn-default" type="button" data-dismiss="modal">ยกเลิก</button>
-			</div>
-		</div>
-	</div>
-</div>
 
 <!-- Confirm Delete -->
 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
@@ -107,8 +87,21 @@ $(function () {
 	}
 	
 	
-	headerJs.logout = function(){			
-		$("#logoutModal").modal('show')			
+	headerJs.logout = function(){
+		Swal.fire({
+		  title: '',
+		  text: "ต้องการออกจากระบบ ?",
+		  icon: 'warning',
+		  showCancelButton: true,
+		  confirmButtonColor: '#3085d6',
+		  cancelButtonColor: '#d33',
+		  confirmButtonText: 'ออกจากระบบ',
+		  cancelButtonText: 'ยกเลิก',
+		}).then(function(result) {
+		  if (result.value) {
+			  headerJs.logoutContinue();
+		  }
+		})
 	}
 	
 	headerJs.logoutContinue = function(){

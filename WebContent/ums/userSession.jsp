@@ -2,7 +2,6 @@
 <%@ taglib uri="/WEB-INF/tld/struts-nested.tld" prefix="nested"%>
 
 <%@ include file="/include/_headermenu_mdb.jsp" %>
-
 <nested:form action="<%= (String)request.getAttribute(com.depthfirst.framework.struts.BaseAction.ACTION_PATH) %>">
 <nested:define id="pageCode" property="pageCode" type="String" />
 <input type="hidden" name="cmd" value="" />
@@ -44,15 +43,19 @@
 				</div>
 			</div>
 			<div class="box-footer">
-				<nested:equal property="pageCmd" value="listUserSession"><input class="btn btn-success" type="button" value="ดูข้อมูลใหม่" onclick="doCmd('listUserSession')" />
-					<input type="button" class="btn btn-default" value="กลับไป" onclick="doCmd('list')" /></nested:equal>
-				<nested:notEqual property="pageCmd" value="listUserSession"><input type="button"  class="btn btn-success" value="ดูข้อมูลใหม่" onclick="doCmd('list')" /></nested:notEqual>
+				<nested:equal property="pageCmd" value="listUserSession">
+					<button onclick="doCmd('listUserSession')" class="btn btn-success btn-sm" type="button"><i class="ti-reload"></i>ดูข้อมูลใหม่</button>
+<!-- 					<input class="btn btn-success btn-sm" type="button" value="ดูข้อมูลใหม่" onclick="doCmd('listUserSession')" /> -->
+					<button onclick="doCmd('list')" class="btn btn-default btn-sm" type="button"><i class="fa fa-reply" aria-hidden="true"></i>กลับ</button>
+<!-- 					<input type="button" class="btn btn-default btn-sm" value="กลับไป" onclick="doCmd('list')" /> -->
+				</nested:equal>
+				<nested:notEqual property="pageCmd" value="listUserSession">
+					<button onclick="doCmd('list')" class="btn btn-success btn-sm" type="button"><i class="ti-reload"></i>ดูข้อมูลใหม่</button>
+<!-- 					<input type="button"  class="btn btn-success btn-sm" value="ดูข้อมูลใหม่" onclick="doCmd('list')" /> -->
+				</nested:notEqual>
 			</div>
 		</div>
 	</div>
 </div>
-
-
 </nested:form>
-
 <%@ include file="/include/_footermenu_mdb.jsp" %>

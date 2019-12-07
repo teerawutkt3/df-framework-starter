@@ -66,9 +66,10 @@
 				</div>
 			</div>
 			<div class="box-footer">
-				<input class="btn btn-primary" type="button" value=" ค้นหา " onclick="if(validateForm(this.form)) doGoto(0)" />
-				<input class="btn btn-primary" type="button" value=" แสดงทั้งหมด " onclick="doCmd('listAll')" /> <input class="btn btn-primary" type="button" value=" เริ่มค้นหาใหม่ " onclick="doCmd('resetSearch')" />
-				<input class="btn btn-primary" type="button" value=" ส่งออกไฟล์ Excel " onclick="doCmd('exportExcel')" />
+				<input class="btn btn-primary btn-sm" type="button" value=" ค้นหา " onclick="if(validateForm(this.form)) doGoto(0)" />
+				<input class="btn btn-primary btn-sm" type="button" value=" แสดงทั้งหมด " onclick="doCmd('listAll')" /> 
+				<input class="btn btn-primary btn-sm" type="button" value=" เริ่มค้นหาใหม่ " onclick="doCmd('resetSearch')" />
+				<input class="btn btn-primary btn-sm" type="button" value=" ส่งออกไฟล์ Excel " onclick="doCmd('exportExcel')" />
 			</div>
 		</div>
 		

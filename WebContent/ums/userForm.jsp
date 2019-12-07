@@ -2,11 +2,11 @@
 <%@ taglib uri="/WEB-INF/tld/struts-nested.tld" prefix="nested"%>
 
 <%@ include file="/include/_headermenu_mdb.jsp" %>
-<script language="JavaScript" src="<%= request.getContextPath() %>/dwr/interface/PpsService.js"></script>
-<script language="JavaScript" src="<%= request.getContextPath() %>/dwr/util.js"></script>
-<script language="JavaScript" src="<%= request.getContextPath() %>/dwr/engine.js"></script>
-<script language="JavaScript" src="<%= request.getContextPath() %>/js/dwr.js"></script>
-<script language="JavaScript" src="<%= request.getContextPath() %>/js/selectOrg.js"></script>
+<%-- <script language="JavaScript" src="<%= request.getContextPath() %>/assets/dwr/interface/PpsService.js"></script> --%>
+<script language="JavaScript" src="<%= request.getContextPath() %>/assets/js/util.js"></script>
+<%-- <script language="JavaScript" src="<%= request.getContextPath() %>/assets/dwr/engine.js"></script> --%>
+<script language="JavaScript" src="<%= request.getContextPath() %>/assets/js/dwr.js"></script>
+<script language="JavaScript" src="<%= request.getContextPath() %>/assets/js/selectOrg.js"></script>
 <script language="JavaScript">
 <!--
 function hasRole() {
@@ -215,7 +215,8 @@ function checkToDateStatus(val) {
 								<th>กลุ่มผู้ใช้งาน</th>
 							</tr>
 							<nested:iterate id="userNode" indexId="ind" property="userNodeList"><tr class="tr<%= ind.intValue()%2 %>">
-								<nested:equal name="<%= pageCode %>" property="editable" value="true"><td align="center" valign="top">
+								<nested:equal name="<%= pageCode %>" property="editable" value="true">
+								<td align="center" valign="top">
 									<input type="checkbox" name="delete_ind" value="<%= ind.intValue() %>" /></td></nested:equal>
 								<td valign="top" width="30%"><nested:write property="userNode.node.shortName" /></td>
 								<td width="70%"><table border="0" width="100%">
@@ -233,7 +234,15 @@ function checkToDateStatus(val) {
 						<nested:present property="userRoleList"><tr><th colspan="4">กลุ่มผู้ใช้งาน</th></tr>
 						<tr><td colspan="4"><table width="100%" border="0">
 						<nested:iterate id="userRole" indexId="ind" property="userRoleList"><tr class="tr<%= ind.intValue()%2 %>">
-							<td width="10" align="center"><nested:checkbox property="isSelect" value="Y" disabled="<%= !editable.booleanValue() %>" /></td>
+							<td width="10" align="center">
+							<div class="checkbox-fade fade-in-primary">
+                                 <label>
+                                     <nested:checkbox property="isSelect" value="Y" disabled="<%= !editable.booleanValue() %>" />
+                                     <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                                     <span class="text-inverse">&nbsp;</span>
+                                 </label>
+                             </div>								
+							</td>
 							<td width="30%"><nested:write property="role.code" /></td>
 							<td width="70%"><nested:write property="role.name" /></td>
 						</tr></nested:iterate>
@@ -245,8 +254,12 @@ function checkToDateStatus(val) {
 			<div class="box-footer">
 				<nested:equal property="editable" value="true">
 					<button class="btn btn-success btn-sm" type="button" onclick="doCmd('doSave')"><i class="ti-save"></i>บันทึก</button>
-					<nested:equal property="canChangePassword" value="true"><nested:equal property="createMode" value="false">
-						<input class="btn btn-warning btn-sm" type="button" value=" กำหนดรหัสผ่าน " onclick="doCmd('goPassword')" /></nested:equal></nested:equal>
+					<nested:equal property="canChangePassword" value="true">
+					<nested:equal property="createMode" value="false">
+<!-- 						<input class="btn btn-warning btn-sm" type="button" value=" กำหนดรหัสผ่าน " onclick="doCmd('goPassword')" /> -->
+						<button class="btn btn-warning btn-sm"  onclick="doCmd('goPassword')" type="button"><i class="ti-key"></i>กำหนดรหัสผ่าน</button>
+					</nested:equal>
+				</nested:equal>
 				</nested:equal>
 					<button class="btn btn-secondary btn-sm" type="button" onclick="doCmd('list')"><i class="fa fa-reply" aria-hidden="true"></i> กลับ</button>
 <%-- 				<input type="button" class="btn btn-secondary btn-sm" value="<i class="fa fa-reply" aria-hidden="true"></i> กลับไป " onclick="doCmd('list')" /> --%>

@@ -52,7 +52,7 @@ function initCheckRightAll() {
 <div class="row">
 	<div class="col-md-12">
 		<div class="box box-primary">
-			<div class="box-header with-border">
+			<div class="box-header with-border mb-4">
 				<h3 class="box-title"><nested:write property="formModeStr" />ข้อมูลกลุ่มผู้ใช้งาน</th></h3>
 			</div>
 			<div class="box-body">
@@ -84,8 +84,10 @@ function initCheckRightAll() {
 				<div class="row form-group">
 					<div class="col-md-12">
 						<nested:equal property="editable" value="true"><tr class="trform"><td colspan="4"><a name="a_page" />
-							<input class="btn btn-default" type="button" name="addPrivBtn" lang="property[hasPriv]" value="เพิ่มสิทธิของกลุ่มผู้ใช้งาน" onclick="popupCmd('listModulePage', 800, 600)" />
-							<input class="btn btn-default" type="button" value="ลบสิทธิของกลุ่มผู้ใช้งาน" onclick="doCmdA('doDeletePage', 'a_page')" />
+<!-- 							<input class="btn btn-success btn-sm" type="button" name="addPrivBtn" lang="property[hasPriv]" value="เพิ่มสิทธิของกลุ่มผู้ใช้งาน" onclick="popupCmd('listModulePage', 800, 600)" /> -->
+							<button class="btn btn-success btn-sm" type="button" onclick="popupCmd('listModulePage', 800, 600)"><i class="ti-check-box"></i>เพิ่มสิทธิของกลุ่มผู้ใช้งาน</button>
+<!-- 							<input class="btn btn-success btn-sm" type="button" value="ลบสิทธิของกลุ่มผู้ใช้งาน" onclick="doCmdA('doDeletePage', 'a_page')" /> -->
+							<button class="btn btn-danger btn-sm" type="button" onclick="doCmdA('doDeletePage', 'a_page')"><i class="ti-minus"></i>ลบสิทธิของกลุ่มผู้ใช้งาน</button>							
 						</td></tr></nested:equal>
 					</div>
 				</div>
@@ -94,25 +96,64 @@ function initCheckRightAll() {
 						<div class="table-responsive">
 							<table class="table table-bordered table-sm table-striped table-hover">
 								<tr>
-									<nested:equal property="editable" value="true"><th width="2%"><input type="checkbox" name="delete_all" onclick="doCheckAll(this.form, 'delete_all', 'delete_ind')" /></th></nested:equal>
+									<nested:equal property="editable" value="true">
+									<th width="2%">										
+										<div class="checkbox-fade fade-in-primary">
+			                                 <label>
+			                                    <input type="checkbox" name="delete_all" onclick="doCheckAll(this.form, 'delete_all', 'delete_ind')" />
+			                                     <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+			                                     <span class="text-inverse">&nbsp;</span>
+			                                 </label>
+			                             </div>
+									</th></nested:equal>
 									<th>ระบบงาน
-										<nested:equal name="<%= pageCode %>" property="createMode" value="false"><br/><nested:select property="formModuleId" onchange="doCmd('changeFormModule')"><option value="">ทั้งหมด</option>
+										<nested:equal name="<%= pageCode %>" property="createMode" value="false"><br/>
+										<nested:select property="formModuleId" onchange="doCmd('changeFormModule')"><option value="">ทั้งหมด</option>
 											<nested:optionsCollection property="formModuleList" value="id" label="name" /></nested:select></nested:equal>
 									</th><th>ประเภทหน้าจอ</th><th>รหัสหน้าจอ</th><th>ชื่อหน้าจอ</th>
 									<% for(int i=0; i<UserSession.RIGHT_LABELS.length; i++) { %>
 										<th><%= UserSession.RIGHT_LABELS[i] %>
 											<nested:equal name="<%= pageCode %>" property="editable" value="true"><br/>
-												<table border="0" width="100%"><tr><td align="center"><input type="checkbox" name="right_all[<%= i %>]" onclick="doCheckRightAll(this.form, <%= i %>)" /></td></tr></table></nested:equal>
+												<table border="0" width="100%">
+													<tr>
+														<td align="center">
+														<div class="checkbox-fade fade-in-primary">
+							                                 <label>
+							                            		<input type="checkbox" name="right_all[<%= i %>]" onclick="doCheckRightAll(this.form, <%= i %>)" />
+							                                     <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+							                                     <span class="text-inverse">&nbsp;</span>
+							                                 </label>
+							                             </div>															
+														</td>
+													</tr>
+												</table>
+											</nested:equal>
 										</th><% } %>
 								</tr>
 								<nested:iterate id="priv" indexId="ind" property="formPrivilegeList"><tr class="tr<%= ind.intValue()%2 %>">
-									<nested:equal name="<%= pageCode %>" property="editable" value="true"><td><input type="checkbox" name="delete_ind" value="<%= ind %>" onclick="doCheckId(this.form, 'delete_all', 'delete_ind')" /></td></nested:equal>
+									<nested:equal name="<%= pageCode %>" property="editable" value="true">
+										<td>
+											<div class="checkbox-fade fade-in-primary">
+				                                 <label>
+				                            		<input type="checkbox" name="delete_ind" value="<%= ind %>" onclick="doCheckId(this.form, 'delete_all', 'delete_ind')" />
+				                                     <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+				                                     <span class="text-inverse">&nbsp;</span>
+				                                 </label>
+				                             </div>										
+										</td>
+									</nested:equal>
 									<td><nested:write property="page.module.name" /></td>
 									<td><nested:write property="page.pageType.name" /></td>
 									<td><nested:write property="page.code" /></td>
 									<td><nested:write property="page.name" /></td>
 									<nested:iterate id="rightVal" property="rightVals"><td align="center">
-										<nested:checkbox property="value" value="Y" disabled="<%= !editable.booleanValue() %>"  onclick="doCheckRightId(this.form, this.name)" />
+										<div class="checkbox-fade fade-in-primary">
+			                                 <label>
+			                            		<nested:checkbox property="value" value="Y" disabled="<%= !editable.booleanValue() %>"  onclick="doCheckRightId(this.form, this.name)" />
+			                                     <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+			                                     <span class="text-inverse">&nbsp;</span>
+			                                 </label>
+			                             </div>												
 									</td></nested:iterate>
 								</tr></nested:iterate>
 							</table>
@@ -123,8 +164,10 @@ function initCheckRightAll() {
 			<div class="box-footer">
 				<div class="row">
 					<div class="col-md-12">
-						<nested:equal property="editable" value="true"><input type="button" class="btn btn-success" value=" บันทึก " onclick="doCmd('doSave')" /></nested:equal>
-						<input type="button" class="btn btn-default" value=" กลับไป " onclick="doCmd('list')" />
+						<nested:equal property="editable" value="true">
+							<button type="button" class="btn btn-success btn-sm" onclick="doCmd('doSave')"><i class="ti-save"></i>บันทึก</button>
+						</nested:equal>
+						<button type="button" class="btn btn-secondary btn-sm" onclick="doCmd('list')"><i class="fa fa-reply" aria-hidden="true"></i>กลับ</button>
 					</div>
 				</div>
 			</div>

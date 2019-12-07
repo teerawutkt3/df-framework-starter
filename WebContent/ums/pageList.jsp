@@ -66,15 +66,20 @@
 				</div>
 			</div>
 			<div class="box-footer">
-				<input class="btn btn-primary" type="button" value=" ค้นหา " onclick="doGoto(0)" />
-				<input class="btn btn-primary" type="button" value=" แสดงทั้งหมด " onclick="doCmd('listAll')" />
-				<input class="btn btn-primary" type="button" value=" เริ่มค้นหาใหม่ " onclick="doCmd('resetSearch')" />
-				<input class="btn btn-primary" type="button" value=" ส่งออกไฟล์ Excel " onclick="doCmd('exportExcel')" />
+				<input class="btn btn-primary btn-sm" type="button" value=" ค้นหา " onclick="doGoto(0)" />
+				<input class="btn btn-primary btn-sm" type="button" value=" แสดงทั้งหมด " onclick="doCmd('listAll')" />
+				<input class="btn btn-primary btn-sm" type="button" value=" เริ่มค้นหาใหม่ " onclick="doCmd('resetSearch')" />
+				<input class="btn btn-primary btn-sm" type="button" value=" ส่งออกไฟล์ Excel " onclick="doCmd('exportExcel')" />
 			
 			</div>
 		</div>
-		
-		<div class="box box-primary  mt-4">
+		<hr>
+		<div class="row mb-2">
+			<div class="col-lg-12 text-right">
+				<button class="btn btn-success btn-sm" onclick="doCmd('goCreate')"  type="button" ><i class="ti-plus"></i>&nbsp;เพิ่มข้อมูลระบบงาน</button>
+			</div>
+		</div>
+		<div class="box box-primary ">
 			<div class="box-body table-responsive">
 				<nested:notEmpty property="searchResult.data">
 					<table class="table table-bordered table-striped table-hover table-sm" border="0" width="95%" align="center">
@@ -94,9 +99,11 @@
 						<td><nested:write name="result" property="pageType.name" /></td>
 						<td><nested:write name="result" property="order" /></td>
 						<td align="center" nowrap="nowrap">
-							&nbsp;<a class="btn btn-info btn-sm" title="ดูข้อมูล" href="javascript:doCmd('goView', <%= ind %>)"><i class="fa fa-search" aria-hidden="true"></i></a>&nbsp;
-							<nested:equal name="<%= pageCode %>" property="canUpdate" value="true">&nbsp;<a title="แก้ไข" class="btn btn-warning btn-sm" href="javascript:doCmd('goUpdate', <%= ind %>)"><i class="fa fa-edit" aria-hidden="true"></i></a>&nbsp;</nested:equal>
-							<nested:equal name="<%= pageCode %>" property="canDelete" value="true">&nbsp;<a title="ลบข้อมูล" class="btn btn-danger btn-sm" href="javascript:doCmd('doDelete', <%= ind %>)"><i class="fa fa-trash" aria-hidden="true"></i></a>&nbsp;</nested:equal>
+						<a class="btn btn-icon btn-outline-info btn-info" title="ดูข้อมูล" href="javascript:doCmd('goView', <%= ind %>)"><i class="ti-search"></i></a>
+								<nested:equal name="<%= pageCode %>" property="canUpdate" value="true">
+								<a title="แก้ไข" class="btn btn-warning btn-outline-warning btn-icon" href="javascript:doCmd('goUpdate', <%= ind %>)"><i class="ti-pencil-alt"></i></a></nested:equal>
+								<nested:equal name="<%= pageCode %>" property="canDelete" value="true">
+								<a title="ลบข้อมูล" class="btn btn-danger btn-outline-danger btn-icon" href="javascript:doCmd('doDelete', <%= ind %>)"><i class="ti-trash"></i></a></nested:equal>								
 						</td>
 					</tr>
 					</nested:iterate>
@@ -107,14 +114,7 @@
 				<nested:empty property="searchResult.data"><nested:equal property="searchResult.processed" value="true">
 					<center class="error">ไม่พบข้อมูลตามเงื่อนไข</center></nested:equal>
 				</nested:empty>
-			</div>
-			<div class="box-footer">
-				<center>
-				<nested:equal property="canCreate" value="true">
-				<input class="btn btn-success" type="button" value=" เพิ่มข้อมูล " onclick="doCmd('goCreate')" />
-				</nested:equal>
-				</center>
-			</div>
+			</div>			
 		</div>
 	</div>
 </div>

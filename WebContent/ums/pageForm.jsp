@@ -65,8 +65,10 @@
 			<div class="box-footer">
 				<div class="row">
 					<div class="col-md-12 ">
-							<nested:equal property="editable" value="true"><input class="btn btn-success" type="button" value=" บันทึก " onclick="doCmd('doSave')" /></nested:equal>
-							<input class="btn btn-secondary" type="button" value=" กลับไป " onclick="doCmd('list')" />
+						<nested:equal property="editable" value="true">
+							<button type="button" class="btn btn-success btn-sm" onclick="doCmd('doSave')"><i class="ti-save"></i>บันทึก</button>
+						</nested:equal>
+						<button type="button" class="btn btn-secondary btn-sm" onclick="doCmd('list')"><i class="fa fa-reply" aria-hidden="true"></i>กลับ</button>
 					</div>
 				</div>
 			</div>
