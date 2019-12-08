@@ -77,45 +77,51 @@ if(user!=null && request.getParameter("doSetPerType")!=null) {
 			<div class="col-sm-6"></div>
 		</div>
 		<div class="row mt-5">
-			<div class="col-sm-2 text-right">UserSession</div>
-			<div class="col-sm-6"><% if(user != null) { %><textarea rows="10" cols="100" class="form-control" readonly="readonly"><%= user %></textarea><% } %></div>
-		</div>
-		<div class="row mt-3">
-			<div class="col-sm-2 text-right">Code</div>
-			<div class="col-sm-3"><input type="text" class="form-control" name="code" value="UMS001" size="5" /></div>
-		</div>
-		<div class="row mt-3">
-			<div class="col-sm-2 text-right">Right</div>
-			<div class="col-sm-6">
-					<% for(int i=0; i<UserSession.RIGHTS.length; i++) { %>
-						<div class="row">
-							<div class="col-lg-12">
-							<div class="checkbox-fade fade-in-primary">
-                                 <label>
-                                     <input type="checkbox" name="right"  id="<%= UserSession.RIGHTS[i] %>" >
-                                     <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
-                                     <span class="text-inverse"><%= UserSession.RIGHT_LABELS[i] %></span>
-                                 </label>
-                             </div>
-							</div>
-						</div>
-					<% } %>
+			<div class="col-sm-4 ">
+				<div class="row mt-3">
+					<div class="col-sm-2 text-right"></div>
+					<div class="col-sm-10">Code<input type="text" class="form-control" name="code" value="UMS001" size="5" /></div>
+				</div>	
+				<div class="row mt-3">
+					<div class="col-sm-2 text-right"></div>
+					<div class="col-sm-10">
+					Right
+							<% for(int i=0; i<UserSession.RIGHTS.length; i++) { %>
+								<div class="row">
+									<div class="col-lg-12">
+									<div class="checkbox-fade fade-in-primary">
+		                                 <label>
+		                                     <input type="checkbox" name="right"  id="<%= UserSession.RIGHTS[i] %>" >
+		                                     <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+		                                     <span class="text-inverse"><%= UserSession.RIGHT_LABELS[i] %></span>
+		                                 </label>
+		                             </div>
+									</div>
+								</div>
+							<% } %>
+					</div>
+				</div>			
 			</div>
-		</div>
-		<br/>
-		<br/>
-		<br/>
-		<div class="row mt-3">
-			<div class="col-sm-2"></div>
-			<div class="col-sm-10">
+<!-- 			<div class="col-sm-2 text-right"> -->
+<!-- 			UserSession -->
+<!-- 			</div> -->
+			<div class="col-sm-7">
+				UserSession
+				<% if(user != null) { %><textarea rows="10" cols="100" class="form-control" readonly="readonly"><%= user %></textarea><% } %>
+			</div>
+		</div>		
+		
+		<div class="row mt-1">
+			<div class="col-lg-1"></div>
+			<div class="col-lg-11">
 				<button type="submit" class="btn btn-success"  name="doAdd"><i class="fa fa-plus-circle"></i> Add </button>
 				<button type="submit" class="btn btn-secondary"  name="doClear"><i class="fa fa-times-circle"></i> Clear </button>				
 				<button type="submit" class="btn btn-info"  name="doAll"><i class="fa fa-list-alt"></i> All </button>
 				<a class="btn btn-info" href="<%= request.getContextPath() %>/home.jsp?random=<%= new java.util.Date().getTime() %>"><i class="fa fa-home"></i> Home</a>
-				<a class="btn btn-info" href="<%= request.getContextPath() %>/index.jsp?random=<%= new java.util.Date().getTime() %>"><i class="fa fa-sign-in"></i> Login</a>
+				<a class="btn btn-info" href="<%= request.getContextPath() %>/index.jsp?random=<%= new java.util.Date().getTime() %>"><i class="fa fa-sign-in"></i> Login</a>			
 			</div>
 		</div>
-	</div>
+		
 </form>
 </body>
 </html>
